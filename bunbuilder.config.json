@@ -1,0 +1,7 @@
+{
+    "browser": {
+        "singlePage": true,
+        "input": ["./src"],
+        "output": "./dist"
+    }
+}

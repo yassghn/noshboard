@@ -1,0 +1,19 @@
+{
+  "name": "noshboard",
+  "version": "0.0.1",
+  "description": "scrolling news updates",
+  "author": "yassghn@protonmail.com",
+  "license": "SEE LICENSE IN license",
+  "module": "build.ts",
+  "type": "module",
+  "scripts": {},
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@typescript-eslint/parser": "^8.33.0",
+    "bunbuilder": "../bunbuilder/bunbuilder-0.0.1.tgz",
+    "eslint": "^9.27.0",
+    "prettier": "^3.5.3",
+    "prettier-eslint": "^16.4.2",
+    "typescript": "^5.8.3"
+  }
+}
