@@ -1,5 +1,6 @@
 {
-    "browser": {
+    "target": "browser",
+    "options": {
         "singlePage": true,
         "input": ["./src"],
         "output": "./dist"
