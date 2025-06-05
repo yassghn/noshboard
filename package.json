@@ -4,8 +4,11 @@
   "description": "scrolling news updates",
   "author": "yassghn@protonmail.com",
   "license": "SEE LICENSE IN license",
-  "module": "build.ts",
-  "type": "module",
+  "browser": "dist/js/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassghn/noshboard.git"
+  },
   "scripts": {},
   "devDependencies": {
     "@types/bun": "latest",
