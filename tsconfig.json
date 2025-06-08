@@ -1,16 +1,19 @@
 {
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "docs": "https://bun.sh/docs/typescript",
+
     "include": ["src/ts/**/*"],
 
     "compilerOptions": {
         // environment setup & latest features
         "lib": ["ESNext", "DOM"],
         "target": "ESNext",
-        "module": "ESNext",
+        "module": "preserve",
         "moduleDetection": "force",
         "allowJs": true,
 
         // bundler mode
-        "moduleResolution": "bundler",
+        //"moduleResolution": "bundler",
         "allowImportingTsExtensions": true,
         "verbatimModuleSyntax": true,
         "noEmit": true,
@@ -34,10 +37,10 @@
         "allowArbitraryExtensions": true,
         "esModuleInterop": true,
         // base look up for paths
-        "baseUrl": "./src/ts/",
+        "baseUrl": "./src/ts",
         // nice project import syntax
         "paths": {
-            "*": ["*"]
+            "@noshboard/config": ["noshboard/config"],
         }
     }
 }
