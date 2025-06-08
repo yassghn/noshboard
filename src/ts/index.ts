@@ -2,6 +2,10 @@
  * index.ts
  */
 
-(async function () {
-    console.log('welcome to noshboard!')
+(function () {
+    function _noshboard() {
+        noshboard()
+    }
+
+    window.onload = _noshboard
 })()
