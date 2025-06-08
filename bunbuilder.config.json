@@ -2,6 +2,7 @@
     "target": "browser",
     "options": {
         "singlePage": true,
+        "noBundleHack": true,
         "input": ["./src"],
         "output": "./dist"
     }
