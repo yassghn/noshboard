@@ -8,7 +8,7 @@
         // environment setup & latest features
         "lib": ["ESNext", "DOM"],
         "target": "ESNext",
-        "module": "preserve",
+        "module": "ESnext",
         "moduleDetection": "force",
         "allowJs": true,
 
