@@ -2,7 +2,7 @@
 <html lang=en>
     <head>
         <title>noshboard</title>
-        <base href="https://yassghn.neocities.org/noshboard/index.html">
+        <!-- <base href="https://yassghn.neocities.org/noshboard/index.html"> -->
         <meta charset="utf-8">
         <meta name="application-name" content="noshboard">
         <meta name="author" content="YASSGHN * KATYUSHA">
@@ -20,6 +20,15 @@
         <script type="module" src="js/noshboard.js" async></script>
     </head>
     <body>
+        <main id="noshboard">
+            <section id="noshboard-content">
+                <div id="canvas-stack" class="canvas-stack">
+                    <canvas id="background-canvas"></canvas>
+                    <canvas id="message-canvas"></canvas>
+                    <canvas id="foreground-canvas"></canvas>
+                </div>
+            </section>
+        </main>
         <script src="js/index.js" async></script>
     </body>
 </html>
