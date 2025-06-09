@@ -1,0 +1,18 @@
+{
+    "html": {
+        "cvs": {
+            "background": {
+                "name": "background",
+                "id": "background-canvas"
+            },
+            "message": {
+                "name": "message",
+                "id": "message-canvas"
+            },
+            "foreground": {
+                "name": "foreground",
+                "id": "foreground-canvas"
+            }
+        }
+    }
+}
