@@ -3,7 +3,7 @@
     "options": {
         "singlePage": true,
         "noBundleHack": true,
-        "input": ["./src"],
-        "output": "./dist"
+        "inputs": ["./src"],
+        "outdir": "./dist"
     }
 }
