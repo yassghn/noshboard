@@ -41,6 +41,9 @@
         // nice project import syntax
         "paths": {
             "@noshboard/config": ["noshboard/config"],
+            "@noshboard/types": ["noshboard/types"],
+            "@noshboard/api": ["noshboard/api"],
+            "@noshboard/canvas": ["noshboard/canvas"]
         }
     }
 }
