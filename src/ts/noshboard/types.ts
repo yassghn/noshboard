@@ -17,4 +17,17 @@ interface CVS {
     height: number
 }
 
-export type { CVS }
+/**
+ * @typedef {object} CVS_STACK
+ * @type {CVS_STACK} canvas html elements
+ * @property {CVS} background background canvas
+ * @property {CVS} message message canvas
+ * @property {CVS} foreground foreground canvas
+ */
+interface CVS_STACK {
+    background: CVS
+    message: CVS
+    foreground: CVS
+}
+
+export type { CVS, CVS_STACK }
