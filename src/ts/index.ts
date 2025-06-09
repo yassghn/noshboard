@@ -2,6 +2,8 @@
  * index.ts
  */
 
+declare function noshboard(): void
+
 (function () {
     function _noshboard() {
         noshboard()
