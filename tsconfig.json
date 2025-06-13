@@ -43,7 +43,8 @@
             "@noshboard/config": ["noshboard/config"],
             "@noshboard/types": ["noshboard/types"],
             "@noshboard/api": ["noshboard/api"],
-            "@noshboard/canvas": ["noshboard/canvas"]
+            "@noshboard/canvas": ["noshboard/canvas"],
+            "@mutual/test": ["mutual/test.mutual"]
         }
     }
 }
