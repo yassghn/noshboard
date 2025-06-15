@@ -3,13 +3,11 @@
  */
 
 import config from '@noshboard/config'
-import api from '@noshboard/api'
 
 function noshboard() {
     const conf = config.obj
     console.log('welcome to noshboard!')
     console.log(`config.debug = ${conf.debug}`)
-    api.apiTest()
 }
 
 declare global {
