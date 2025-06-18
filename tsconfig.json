@@ -43,7 +43,9 @@
             "@noshboard/config": ["noshboard/config"],
             "@noshboard/types": ["noshboard/types"],
             "@noshboard/api": ["noshboard/api"],
-            "@noshboard/canvas": ["noshboard/canvas"]
+            "@noshboard/canvas": ["noshboard/canvas"],
+            "@noshboard/state": ["noshboard/state"],
+            "@noshboard/init": ["noshboard/init"]
         }
     }
 }
