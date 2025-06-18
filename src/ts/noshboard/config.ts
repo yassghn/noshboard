@@ -20,7 +20,7 @@ async function _fetchConfigJson(): Promise<object> {
 }
 
 /**
- * get noshboard configuration object from json obj
+ * get noshboard configuration object from json object
  *
  * @returns {Promise<CONFIG>} noshboard configuration object
  */
