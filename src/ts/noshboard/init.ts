@@ -8,6 +8,9 @@ async function _initState() {
     await state.init()
 }
 
+/**
+ * init noshboard
+ */
 async function _initNoshboard() {
     await _initState()
 }

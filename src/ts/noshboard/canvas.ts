@@ -6,12 +6,24 @@ import api from '@noshboard/api'
 import type { CVS, CVS_STACK } from '@noshboard/types'
 import configJSON from '../../../resources/config.json' with { type: 'JSON' }
 
+/**
+ * get canvas redering context for a specified canvas html element
+ *
+ * @param {string} id id of canvas html element
+ * @returns {CanvasRenderingContext2D} canvas rendering context
+ */
 function _hewCvsCtx(id: string): CanvasRenderingContext2D {
     const cvsElem = document.getElementById(id) as HTMLCanvasElement
     const ctx = cvsElem.getContext('2d') as CanvasRenderingContext2D
     return ctx
 }
 
+/**
+ * get canvas for a specified canvas html element
+ *
+ * @param {string} id id of canvas html element
+ * @returns {CVS} html element canvas object
+ */
 function _hewCvs(id: string): CVS {
     const ctx = _hewCvsCtx(id) as CanvasRenderingContext2D
     const cvs: CVS = {
@@ -23,24 +35,44 @@ function _hewCvs(id: string): CVS {
     return cvs
 }
 
+/**
+ * get background canvas
+ *
+ * @returns {CVS} html element canvas object
+ */
 function _hewBackgroundCvs(): CVS {
     const id = configJSON.html.cvs.background.id
     const cvs: CVS = _hewCvs(id)
     return cvs
 }
 
+/**
+ * get message canvas
+ *
+ * @returns {CVS} html element canvas object
+ */
 function _hewMessageCvs(): CVS {
     const id = configJSON.html.cvs.message.id
     const cvs: CVS = _hewCvs(id)
     return cvs
 }
 
+/**
+ * get foreground canvas
+ *
+ * @returns {CVS} html element canvas object
+ */
 function _hewForegroundCvs(): CVS {
     const id = configJSON.html.cvs.foreground.id
     const cvs: CVS = _hewCvs(id)
     return cvs
 }
 
+/**
+ * get canvas objects aggregate
+ *
+ * @returns {CVS_STACK} html element canvas objects aggregate
+ */
 function _hewCvsStack(): CVS_STACK {
     const cvsStack: CVS_STACK = {
         background: _hewBackgroundCvs(),

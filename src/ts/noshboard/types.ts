@@ -2,14 +2,20 @@
  * types.ts
  */
 
+/**
+ * @type {CONFIG}
+ * @typedef {object} CONFIG noshboard configuration interface
+ * @property {boolean} debug debug flag
+ * @property {object} html html elements
+ */
 interface CONFIG {
     debug: boolean
     html: object
 }
 
 /**
- * @typedef {object} CVS
- * @type {CVS} 2d canvas rendering object
+ * @type {CVS}
+ * @typedef {object} CVS 2d canvas rendering object
  * @property {CanvasRenderingContext2D} ctx canvas 2d rendering context
  * @property {object} api rendering api
  * @property {number} width canvas width in pixels
@@ -23,8 +29,8 @@ interface CVS {
 }
 
 /**
- * @typedef {object} CVS_STACK
- * @type {CVS_STACK} canvas html elements
+ * @type {CVS_STACK}
+ * @typedef {object} CVS_STACK canvas html elements
  * @property {CVS} background background canvas
  * @property {CVS} message message canvas
  * @property {CVS} foreground foreground canvas
