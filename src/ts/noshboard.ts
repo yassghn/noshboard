@@ -12,7 +12,7 @@ declare global {
     }
 }
 
-;(() => {
+(() => {
     /**
      * noashboard main
      */
