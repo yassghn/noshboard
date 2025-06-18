@@ -1,5 +1,9 @@
 /**
  * types.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/types
+ * @property {noshboard.module:noshboard/types} types noshboard types
  */
 
 /**

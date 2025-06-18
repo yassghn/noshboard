@@ -1,5 +1,9 @@
 /**
  * state.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/state
+ * @property {noshboard.module:noshboard/state} state noshboard state
  */
 
 import config from '@noshboard/config'

@@ -1,5 +1,9 @@
 /**
  * init.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/init
+ * @property {noshboard.module:noshboard/init} init noshboard initialization
  */
 
 import state from '@noshboard/state'

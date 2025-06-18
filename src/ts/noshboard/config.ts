@@ -1,5 +1,9 @@
 /**
  * config.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/config
+ * @property {noshboard.module:noshboard/config} config noshboard configuration
  */
 
 import type { CONFIG } from './types'

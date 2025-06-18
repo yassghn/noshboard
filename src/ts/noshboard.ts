@@ -1,5 +1,9 @@
 /**
  * noshboard.ts
+ *
+ * @memberof noshboard
+ * @module noshboard
+ * @property {noshboard.module:noshboard}
  */
 
 import init from '@noshboard/init'
@@ -15,6 +19,8 @@ declare global {
 (() => {
     /**
      * noashboard main
+     *
+     * @memberof noshboard.module:noshboard
      */
     function noshboard() {
         init.noshboard().then(() => {
@@ -27,6 +33,8 @@ declare global {
 
     /**
      * add noshboard function to DOM global space
+     * 
+     * @memberof noshboard.module:noshboard
      */
     function _addToWindow() {
         window.noshboard = window.noshboard || {}

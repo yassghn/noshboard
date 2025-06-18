@@ -1,5 +1,9 @@
 /**
  * canvas.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/canvas
+ * @property {noshboard.module:noshboard/canvas} canvas canvas objects
  */
 
 import api from '@noshboard/api'
