@@ -2,6 +2,11 @@
  * types.ts
  */
 
+interface CONFIG {
+    debug: boolean
+    html: object
+}
+
 /**
  * @typedef {object} CVS
  * @type {CVS} 2d canvas rendering object
@@ -30,4 +35,4 @@ interface CVS_STACK {
     foreground: CVS
 }
 
-export type { CVS, CVS_STACK }
+export type { CONFIG, CVS, CVS_STACK }
