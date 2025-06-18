@@ -4,6 +4,7 @@
         "singlePage": true,
         "noBundleHack": true,
         "inputs": ["./src"],
-        "outdir": "./dist"
+        "outdir": "./dist",
+        "resources": ["./resources"]
     }
 }
