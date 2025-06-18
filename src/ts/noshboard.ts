@@ -2,7 +2,8 @@
  * noshboard.ts
  */
 
-import config from '@noshboard/config'
+import init from '@noshboard/init'
+import state from '@noshboard/state'
 
 // extend Window interface, DOM api window, adding noshboard
 declare global {
@@ -11,15 +12,17 @@ declare global {
     }
 }
 
-(() => {
-
+;(() => {
     /**
      * noashboard main
      */
     function noshboard() {
-        const conf = config.obj
-        console.log('welcome to noshboard!')
-        console.log(`config.debug = ${conf.debug}`)
+        init.noshboard().then(() => {
+            const conf = state.config
+            if (conf.debug) {
+                console.log('welcome to noshboard!')
+            }
+        })
     }
 
     /**
@@ -31,5 +34,4 @@ declare global {
     }
 
     _addToWindow()
-
 })()
