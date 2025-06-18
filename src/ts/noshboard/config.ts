@@ -2,24 +2,27 @@
  * config.ts
  */
 
-interface CONFIG {
-    debug: boolean
+import type { CONFIG } from './types'
+
+async function _fetchConfigJson(): Promise<object> {
+    const jsonPath = 'resources/config.json'
+    const jsonObj = (await (await (fetch(jsonPath))).json())
+    return jsonObj
 }
 
-function _hewConfig(): CONFIG {
-    const config: CONFIG = {
-        debug: true
-    }
+async function _hewConfig(): Promise<CONFIG> {
+    const configJSON = await _fetchConfigJson()
+    const config = { ...configJSON } as CONFIG
     return config
 }
 
-function _getConfig(): CONFIG {
+async function _getConfig(): Promise<CONFIG> {
     const config = _hewConfig()
     return config
 }
 
 const config = {
-    get obj(): CONFIG {
+    async get(): Promise<CONFIG> {
         return _getConfig()
     }
 }
