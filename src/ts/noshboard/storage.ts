@@ -8,11 +8,13 @@
 
 import config from '@noshboard/config'
 import strings from '@noshboard/strings'
-import type { CONFIG, STRINGS } from './types'
+import news from '@noshboard/news'
+import type { CONFIG, NEWS_JSON, STRINGS } from './types'
 
 const _state = {
     config: null as unknown as CONFIG,
-    strings: null as unknown as STRINGS
+    strings: null as unknown as STRINGS,
+    news: null as unknown as NEWS_JSON
 }
 
 /**
@@ -51,11 +53,29 @@ function _getStrings(): STRINGS {
 }
 
 /**
+ * add news to state
+ */
+async function _setNews() {
+    const newsJSON = await news.get()
+    _state.news = newsJSON
+}
+
+/**
+ * get news from state
+ *
+ * @returns {NEWS_JSON} news json object
+ */
+function _getNews(): NEWS_JSON {
+    return _state.news
+}
+
+/**
  * initialize storage
  */
 async function _init() {
     await _setConfig()
     await _setStrings()
+    await _setNews()
 }
 
 const storage = {
@@ -69,6 +89,10 @@ const storage = {
 
     get strings(): STRINGS {
         return _getStrings()
+    },
+
+    get news(): NEWS_JSON {
+        return _getNews()
     }
 }
 
