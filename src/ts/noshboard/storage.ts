@@ -21,7 +21,6 @@ const _state = {
 async function _setConfig() {
     const conf = await config.get()
     _state.config = conf
-    console.dir(_state.config)
 }
 
 /**
