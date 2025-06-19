@@ -8,7 +8,6 @@
 
 import storage from '@noshboard/storage'
 import canvas from '@noshboard/canvas'
-
 import type { CVS, CVS_STACK } from './types'
 
 const _state = {
