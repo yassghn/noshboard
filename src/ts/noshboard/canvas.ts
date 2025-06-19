@@ -7,8 +7,8 @@
  */
 
 import api from '@noshboard/api'
+import storage from '@noshboard/storage'
 import type { CVS, CVS_STACK } from '@noshboard/types'
-import configJSON from '../../../resources/config.json' with { type: 'JSON' }
 
 /**
  * get canvas redering context for a specified canvas html element
@@ -45,7 +45,7 @@ function _hewCvs(id: string): CVS {
  * @returns {CVS} html element canvas object
  */
 function _hewBackgroundCvs(): CVS {
-    const id = configJSON.html.cvs.background.id
+    const id = storage.config.html.cvs.background.id
     const cvs: CVS = _hewCvs(id)
     return cvs
 }
@@ -56,7 +56,7 @@ function _hewBackgroundCvs(): CVS {
  * @returns {CVS} html element canvas object
  */
 function _hewMessageCvs(): CVS {
-    const id = configJSON.html.cvs.message.id
+    const id = storage.config.html.cvs.message.id
     const cvs: CVS = _hewCvs(id)
     return cvs
 }
@@ -67,7 +67,7 @@ function _hewMessageCvs(): CVS {
  * @returns {CVS} html element canvas object
  */
 function _hewForegroundCvs(): CVS {
-    const id = configJSON.html.cvs.foreground.id
+    const id = storage.config.html.cvs.foreground.id
     const cvs: CVS = _hewCvs(id)
     return cvs
 }
