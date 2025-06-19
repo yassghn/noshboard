@@ -1,0 +1,20 @@
+{
+    "options": {
+        "separator": "|"
+    },
+    "news": {
+        "today": {
+            "date": "2025/06/19",
+            "bulletin": [
+                {
+                    "title": "test news title",
+                    "message": "test news message"
+                },
+                {
+                    "title": "test news title 2",
+                    "message": "test news message 2"
+                }
+            ]
+        }
+    }
+}
