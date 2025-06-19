@@ -6,37 +6,84 @@
  * @property {noshboard.module:noshboard/state} state noshboard state
  */
 
-import config from '@noshboard/config'
-import type { CONFIG } from './types'
+import storage from '@noshboard/storage'
+import canvas from '@noshboard/canvas'
+
+import type { CVS, CVS_STACK } from './types'
 
 const _state = {
-    config: null as unknown as CONFIG
+    cvsStack: null as unknown as CVS_STACK
 }
 
 /**
- * add config to state
+ * get debug flag from storage
  *
- * @param {CONFIG} conf noshboard configuration object
+ * @returns {boolean} debug flag
  */
-function _setConfig(conf: CONFIG) {
-    _state.config = conf
+function _getDebug(): boolean {
+    return storage.config.debug
 }
 
 /**
- * get config from state
+ * get verbose flag from storage
  *
- * @returns {CONFIG} noshboard configuration object
+ * @returns {boolean} verbose flag
  */
-function _getConfig() {
-    return _state.config
+function _getVerbose(): boolean {
+    return storage.config.verbose
+}
+
+/**
+ * add cvs stack to state
+ *
+ * @param {CVS_STACK} cvsStack canvas stack
+ */
+function _setCvsStack(cvsStack: CVS_STACK) {
+    _state.cvsStack = cvsStack
+}
+
+/**
+ * get canvas stack
+ *
+ * @returns {CVS_STACK} canvas stack
+ */
+function _getCvsStack(): CVS_STACK {
+    return _state.cvsStack
+}
+
+/**
+ * get background canvas
+ *
+ * @returns {CVS} background canvas
+ */
+function _getBackgroundCvs(): CVS {
+    return _state.cvsStack.background
+}
+
+/**
+ * get message canvas
+ *
+ * @returns {CVS} message canvas
+ */
+function _getMessageCvs(): CVS {
+    return _state.cvsStack.message
+}
+
+/**
+ * foreground canvas
+ *
+ * @returns {CVS} get foreground canvas
+ */
+function _getForegroundCvs(): CVS {
+    return _state.cvsStack.foreground
 }
 
 /**
  * init state
  */
 async function _init() {
-    const conf = await config.get()
-    _setConfig(conf)
+    const cvsStack = canvas.cvsStack
+    _setCvsStack(cvsStack)
 }
 
 const state = {
@@ -44,8 +91,28 @@ const state = {
         await _init()
     },
 
-    get config(): CONFIG {
-        return _getConfig()
+    get debug(): boolean {
+        return _getDebug()
+    },
+
+    get verbose(): boolean {
+        return _getVerbose()
+    },
+
+    get cvsStack(): CVS_STACK {
+        return _getCvsStack()
+    },
+
+    get backgroundCvs(): CVS {
+        return _getBackgroundCvs()
+    },
+
+    get messageCvs(): CVS {
+        return _getMessageCvs()
+    },
+
+    get foregroundCvs(): CVS {
+        return _getForegroundCvs()
     }
 }
 
