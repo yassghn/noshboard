@@ -7,7 +7,7 @@
  */
 
 import init from '@noshboard/init'
-import state from '@noshboard/state'
+import verbose from '@noshboard/verbose'
 
 // extend Window interface, DOM api window, adding noshboard
 declare global {
@@ -24,16 +24,13 @@ declare global {
      */
     function noshboard() {
         init.noshboard().then(() => {
-            const conf = state.config
-            if (conf.debug) {
-                console.log('welcome to noshboard!')
-            }
+            verbose.greet()
         })
     }
 
     /**
      * add noshboard function to DOM global space
-     * 
+     *
      * @memberof noshboard.module:noshboard
      */
     function _addToWindow() {
