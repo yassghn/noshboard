@@ -7,9 +7,20 @@
  */
 
 import state from '@noshboard/state'
+import storage from '@noshboard/storage'
 
+/**
+ * initialize state
+ */
 async function _initState() {
     await state.init()
+}
+
+/**
+ * initialize storage
+ */
+async function _initStorage() {
+    await storage.init()
 }
 
 /**
@@ -17,6 +28,7 @@ async function _initState() {
  */
 async function _initNoshboard() {
     await _initState()
+    await _initStorage()
 }
 
 const init = {
