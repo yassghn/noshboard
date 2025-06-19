@@ -27,8 +27,9 @@ async function _initStorage() {
  * init noshboard
  */
 async function _initNoshboard() {
-    await _initState()
-    await _initStorage()
+    await _initStorage().then(async () => {
+        await _initState()
+    })
 }
 
 const init = {
