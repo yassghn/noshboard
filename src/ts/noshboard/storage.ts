@@ -1,0 +1,76 @@
+/**
+ * storage.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/storage
+ * @property {noshboard.module:noshboard/storage} storage noshboard storage
+ */
+
+import config from '@noshboard/config'
+import strings from '@noshboard/strings'
+import type { CONFIG, STRINGS } from './types'
+
+const _state = {
+    config: null as unknown as CONFIG,
+    strings: null as unknown as STRINGS
+}
+
+/**
+ * add config to state
+ */
+async function _setConfig() {
+    const conf = await config.get()
+    _state.config = conf
+    console.dir(_state.config)
+}
+
+/**
+ * get config from state
+ *
+ * @returns {CONFIG} noshboard configuration object
+ */
+function _getConfig() {
+    return _state.config
+}
+
+/**
+ * add strings to state
+ */
+async function _setStrings() {
+    const strs = await strings.get() as STRINGS
+    _state.strings = strs
+
+}
+
+/**
+ * get noshboard string constants
+ *
+ * @returns {STRINGS} noshboard string constants
+ */
+function _getStrings(): STRINGS {
+    return _state.strings
+}
+
+/**
+ * initialize storage
+ */
+async function _init() {
+    await _setConfig()
+    await _setStrings()
+}
+
+const storage = {
+    init: async () => {
+        await _init()
+    },
+
+    get config(): CONFIG {
+        return _getConfig()
+    },
+
+    get strings(): STRINGS {
+        return _getStrings()
+    }
+}
+
+export default storage
