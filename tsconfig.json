@@ -45,7 +45,10 @@
             "@noshboard/api": ["noshboard/api"],
             "@noshboard/canvas": ["noshboard/canvas"],
             "@noshboard/state": ["noshboard/state"],
-            "@noshboard/init": ["noshboard/init"]
+            "@noshboard/init": ["noshboard/init"],
+            "@noshboard/strings": ["noshboard/strings"],
+            "@noshboard/storage": ["noshboard/storage"],
+            "@noshboard/verbose": ["noshboard/verbose"]
         }
     }
 }
