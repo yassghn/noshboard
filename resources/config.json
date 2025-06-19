@@ -1,5 +1,6 @@
 {
     "debug": true,
+    "verbose": true,
     "html": {
         "cvs": {
             "background": {
