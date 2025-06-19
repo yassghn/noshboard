@@ -10,10 +10,12 @@
  * @type {CONFIG}
  * @typedef {object} CONFIG noshboard configuration interface
  * @property {boolean} debug debug flag
+ * @property {boolean} verbose verbose flag
  * @property {object} html html elements
  */
 interface CONFIG {
     debug: boolean
+    verbose: boolean
     html: object
 }
 
@@ -45,4 +47,22 @@ interface CVS_STACK {
     foreground: CVS
 }
 
-export type { CONFIG, CVS, CVS_STACK }
+/**
+ * @type {STRINGS}
+ * @typedef {object} STRINGS noshboard string constants
+ * @property {string} greet greeting string
+ */
+interface STRINGS {
+    greet: string
+}
+
+/**
+ * @type {STORAGE}
+ * @typedef {object} STORAGE noshboard storage
+ * @property {STRINGS} strings string constants
+ */
+interface STORAGE {
+    strings: STRINGS
+}
+
+export type { CONFIG, CVS, CVS_STACK, STRINGS, STORAGE }
