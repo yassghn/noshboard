@@ -98,4 +98,69 @@ interface STORAGE {
     strings: STRINGS
 }
 
-export type { CVS_CONFIG, CVS_STACK_CONFIG, HTML_CONFIG, CONFIG, CVS, CVS_STACK, STRINGS, STORAGE }
+/**
+ * @type {BULLETIN_POST}
+ * @typedef {object} BULLETIN_POST
+ * @property {string} title bulletin post title
+ * @property {string} message bulletin post message
+ */
+interface BULLETIN_POST {
+    title: string
+    message: string
+}
+
+/**
+ * @type {NEWS_GIST}
+ * @typedef {object} NEWS_GIST
+ * @property {string} date date of news gist
+ * @property {BULLETIN_POST[]} bulletin array of bulletins
+ */
+interface NEWS_GIST {
+    date: string
+    bulletin: BULLETIN_POST[]
+}
+
+/**
+ * @type {NEWS}
+ * @typedef {object} NEWS
+ * @property {NEWS_GIST} today the days news gist
+ */
+interface NEWS {
+    today: NEWS_GIST
+}
+
+/**
+ * @type {NEWS_OPTIONS}
+ * @typedef {object} NEWS_OPTIONS
+ * @property {string} separator bulletin post title/message separator
+ */
+interface NEWS_OPTIONS {
+    separator: string
+}
+
+/**
+ * @type {NEWS_JSON}
+ * @typedef {object} NEWS_JSON
+ * @property {NEWS_OPTIONS} options news options
+ * @property {NEWS} news the news
+ */
+interface NEWS_JSON {
+    options: NEWS_OPTIONS
+    news: NEWS
+}
+
+export type {
+    CVS_CONFIG,
+    CVS_STACK_CONFIG,
+    HTML_CONFIG,
+    CONFIG,
+    CVS,
+    CVS_STACK,
+    STRINGS,
+    STORAGE,
+    BULLETIN_POST,
+    NEWS_GIST,
+    NEWS,
+    NEWS_OPTIONS,
+    NEWS_JSON
+}
