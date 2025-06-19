@@ -48,7 +48,8 @@
             "@noshboard/init": ["noshboard/init"],
             "@noshboard/strings": ["noshboard/strings"],
             "@noshboard/storage": ["noshboard/storage"],
-            "@noshboard/verbose": ["noshboard/verbose"]
+            "@noshboard/verbose": ["noshboard/verbose"],
+            "@noshboard/news": ["noshboard/news"]
         }
     }
 }
