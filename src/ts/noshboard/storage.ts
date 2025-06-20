@@ -91,7 +91,7 @@ const storage = {
         return _getStrings()
     },
 
-    get news(): NEWS_JSON {
+    get bulletin(): NEWS_JSON {
         return _getNews()
     }
 }
