@@ -39,7 +39,7 @@ function _bulletinTemplateAdded(): boolean {
 async function _appendBulletinTemplate() {
     if (!_bulletinTemplateAdded()) {
         const path = 'resources/templates/bulletin.html'
-        const bulletinTemplate = await (await fetch(path)).text()
+        const bulletinTemplate = (await (await fetch(path)).text())
         const range = document.createRange()
         const frag = range.createContextualFragment(bulletinTemplate)
         document.body.appendChild(frag)
