@@ -31,12 +31,35 @@ interface CVS_STACK_CONFIG {
 }
 
 /**
+ * @type {BULLETIN_TEMPLATE}
+ * @typedef {object} BULLETIN_TEMPLATE
+ * @property {string} templateId template html id
+ * @property {string} headingId heading html id
+ * @property {string} paragraphId paragraph html id
+ */
+interface BULLETIN_TEMPLATE {
+    templateId: string
+    headingId: string
+    paragraphId: string
+}
+
+/**
+ * @type {TEMPLATE_CONFIG}
+ * @typedef {object} TEMPLATE_CONFIG
+ * @property {BULLETIN_TEMPLATE} bulletin bulletin template
+ */
+interface TEMPLATE_CONFIG {
+    bulletin: BULLETIN_TEMPLATE
+}
+
+/**
  * @type {HTML_CONFIG}
  * @typedef {object} HTML_CONFIG
  * @property {object} cvs canvas stack configuration
  */
 interface HTML_CONFIG {
     cvs: CVS_STACK_CONFIG
+    template: TEMPLATE_CONFIG
 }
 
 /**
@@ -152,6 +175,8 @@ interface NEWS_JSON {
 export type {
     CVS_CONFIG,
     CVS_STACK_CONFIG,
+    BULLETIN_TEMPLATE,
+    TEMPLATE_CONFIG,
     HTML_CONFIG,
     CONFIG,
     CVS,
