@@ -36,13 +36,13 @@ async function _hewConfig(): Promise<CONFIG> {
  * @returns {Promise<CONFIG>} noshboard configuration object
  */
 async function _getConfig(): Promise<CONFIG> {
-    const config = _hewConfig()
+    const config = await _hewConfig()
     return config
 }
 
 const config = {
     async get(): Promise<CONFIG> {
-        return _getConfig()
+        return await _getConfig()
     }
 }
 
