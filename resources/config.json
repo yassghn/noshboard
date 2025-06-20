@@ -15,6 +15,13 @@
                 "name": "foreground",
                 "id": "foreground-canvas"
             }
+        },
+        "template": {
+            "bulletin": {
+                "templateId": "bulletin-template",
+                "headingId": "bulletin-title-_",
+                "paragraphId": "bulletin-message-_"
+            }
         }
     }
 }
