@@ -50,7 +50,9 @@
             "@noshboard/storage": ["noshboard/storage"],
             "@noshboard/verbose": ["noshboard/verbose"],
             "@noshboard/news": ["noshboard/news"],
-            "@noshboard/bulletin": ["noshboard/bulletin"]
+            "@noshboard/bulletin": ["noshboard/bulletin"],
+            "@noshboard/html": ["noshboard/html"],
+            "@noshboard/template": ["noshboard/template"]
         }
     }
 }
