@@ -34,12 +34,12 @@ async function _hewStrings(): Promise<object> {
  */
 
 async function _getStrings(): Promise<object>  {
-    return _hewStrings()
+    return await _hewStrings()
 }
 
 const strings = {
     async get(): Promise<object> {
-        return _getStrings()
+        return await _getStrings()
     }
 }
 
