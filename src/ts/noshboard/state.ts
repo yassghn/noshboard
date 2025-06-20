@@ -80,14 +80,14 @@ function _getForegroundCvs(): CVS {
 /**
  * init state
  */
-async function _init() {
+function _init() {
     const cvsStack = canvas.cvsStack
     _setCvsStack(cvsStack)
 }
 
 const state = {
-    init: async () => {
-        await _init()
+    init: () => {
+        _init()
     },
 
     get debug(): boolean {
