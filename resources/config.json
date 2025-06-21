@@ -2,6 +2,17 @@
     "debug": true,
     "verbose": true,
     "html": {
+        "elems": {
+            "main": {
+                "id": "noshboard"
+            },
+            "section": {
+                "id": "noshboard-content"
+            },
+            "div": {
+                "id": "canvas-stack"
+            }
+        },
         "cvs": {
             "background": {
                 "name": "background",
