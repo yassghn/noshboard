@@ -46,6 +46,18 @@ async function _appendBulletinTemplate() {
     }
 }
 
+/**
+ * hew bulletin template
+ *
+ * @returns {HTMLElement|null} bulletin template
+ */
+function _getBulletinTempalte(): HTMLTemplateElement | null {
+    const config = storage.config
+    const id = config.html.template.bulletin.templateId
+    const template = document.getElementById(id) as HTMLTemplateElement
+    return template
+}
+
 const template = {
     isSupported: (): boolean => {
         return _templateIsSupported()
@@ -53,6 +65,10 @@ const template = {
 
     appendBulletinTemplate: async () => {
         await _appendBulletinTemplate()
+    },
+
+    get bulletinTemplate(): HTMLTemplateElement | null {
+       return _getBulletinTempalte()
     }
 }
 
