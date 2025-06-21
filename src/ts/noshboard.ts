@@ -6,8 +6,8 @@
  * @property {noshboard.module:noshboard}
  */
 
+import circulate from '@noshboard/circulate'
 import init from '@noshboard/init'
-import verbose from '@noshboard/verbose'
 
 // extend Window interface, DOM api window, adding noshboard
 declare global {
@@ -24,7 +24,7 @@ declare global {
      */
     function noshboard() {
         init.noshboard().then(() => {
-            verbose.greet()
+            circulate.noshboard()
         })
     }
 
