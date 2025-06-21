@@ -52,7 +52,8 @@
             "@noshboard/news": ["noshboard/news"],
             "@noshboard/bulletin": ["noshboard/bulletin"],
             "@noshboard/html": ["noshboard/html"],
-            "@noshboard/template": ["noshboard/template"]
+            "@noshboard/template": ["noshboard/template"],
+            "@noshboard/circulate": ["noshboard/circulate"]
         }
     }
 }
