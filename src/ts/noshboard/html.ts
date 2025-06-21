@@ -45,7 +45,6 @@ function _setIds(post: BULLETIN_POST, heading: HTMLElement, paragraph: HTMLEleme
         if (_hId && _pId) {
             const hId = _hId.replace('_', post.title.replaceAll(' ', '-'))
             const pId = _pId.replace('_', post.title.replaceAll(' ', '-'))
-            console.log(hId, pId)
             if (hId && pId) {
                 heading.setAttribute('id', hId)
                 paragraph.setAttribute('id', pId)
@@ -132,7 +131,7 @@ function _hewBulletinPosts(
 
 /**
  * append all bulletin post html elements
- * 
+ *
  * @param {BULLETIN_POST_HTML[]} bulletinPostsarray of bulletin post html elements
  */
 function _appendBulletinHtml(bulletinPosts: BULLETIN_POST_HTML[]) {
