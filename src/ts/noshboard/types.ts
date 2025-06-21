@@ -53,11 +53,34 @@ interface TEMPLATE_CONFIG {
 }
 
 /**
+ * @type {ELEM}
+ * @typedef {object} ELEM
+ * @property {string} id elem html id
+ */
+interface ELEM {
+    id: string
+}
+
+/**
+ * @type {ELEMS_CONFIG}
+ * @typedef {object} ELEMS_CONFIG
+ * @property {ELEM} main html element main
+ * @property {ELEM} section html element section
+ * @property {ELEM} DIV html element div
+ */
+interface ELEMS_CONFIG {
+    main: ELEM
+    section: ELEM
+    DIV: ELEM
+}
+
+/**
  * @type {HTML_CONFIG}
  * @typedef {object} HTML_CONFIG
  * @property {object} cvs canvas stack configuration
  */
 interface HTML_CONFIG {
+    elems: ELEMS_CONFIG
     cvs: CVS_STACK_CONFIG
     template: TEMPLATE_CONFIG
 }
@@ -177,6 +200,8 @@ export type {
     CVS_STACK_CONFIG,
     BULLETIN_TEMPLATE,
     TEMPLATE_CONFIG,
+    ELEM,
+    ELEMS_CONFIG,
     HTML_CONFIG,
     CONFIG,
     CVS,
