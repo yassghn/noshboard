@@ -23,6 +23,9 @@ function _addToWindow(lambda: () => void) {
     window.noshboard = lambda
 }
 
+/**
+ * set resize function
+ */
 function _setResize() {
     window.onresize = html.fitCvsStack
 }
