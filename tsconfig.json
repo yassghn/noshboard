@@ -56,7 +56,7 @@
             "@noshboard/circulate": ["noshboard/circulate"],
             "@noshboard/localFridge": ["noshboard/localFridge"],
             "@noshboard/render": ["noshboard/render"],
-            "@noshboard/window": ["noshboard/window"]
+            "@noshboard/util": ["noshboard/util"]
         }
     }
 }
