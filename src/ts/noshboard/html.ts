@@ -12,6 +12,7 @@ import storage from '@noshboard/storage'
 import type { BULLETIN_POST, NEWS_GIST } from './types'
 
 /**
+ * @memberof noshboard.module:noshboard/html
  * @type {BULLETIN_POST_HTML}
  * @typedef {object} BULLETIN_POST_HTML
  * @property {HTMLElement} heading html element heading
