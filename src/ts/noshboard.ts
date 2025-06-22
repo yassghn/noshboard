@@ -8,13 +8,7 @@
 
 import circulate from '@noshboard/circulate'
 import init from '@noshboard/init'
-
-// extend Window interface, DOM api window, adding noshboard
-declare global {
-    interface Window {
-        noshboard: any
-    }
-}
+import util from '@noshboard/util'
 
 (() => {
     /**
@@ -29,14 +23,12 @@ declare global {
     }
 
     /**
-     * add noshboard function to DOM global space
+     * set window properties
      *
      * @memberof noshboard.module:noshboard
      */
-    function _addToWindow() {
-        window.noshboard = window.noshboard || {}
-        window.noshboard = noshboard
-    }
-
-    _addToWindow()
+    (function setWindowProps() {
+        util.addToWindow(noshboard)
+        util.setResize()
+    })()
 })()
