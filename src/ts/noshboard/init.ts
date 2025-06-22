@@ -9,6 +9,7 @@
 import state from '@noshboard/state'
 import storage from '@noshboard/storage'
 import localFridge from '@noshboard/localFridge'
+import html from '@noshboard/html'
 
 /**
  * initialize state
@@ -59,12 +60,20 @@ function _updateLocalFridgeOrStorage() {
 }
 
 /**
+ * fit cvs stack to view
+ */
+function _fitCvsStack() {
+    html.fitCvsStack()
+}
+
+/**
  * init noshboard
  */
 async function _initNoshboard() {
     await _initStorage().then(() => {
         _initState()
         _updateLocalFridgeOrStorage()
+        _fitCvsStack()
     })
 }
 
