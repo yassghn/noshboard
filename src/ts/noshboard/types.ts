@@ -195,6 +195,14 @@ interface NEWS_JSON {
     news: NEWS
 }
 
+/**
+ * localFridge (localStorage) items
+ */
+const fridgeItems = {
+    debug: 'debug',
+    verbose: 'verbose'
+}
+
 export type {
     CVS_CONFIG,
     CVS_STACK_CONFIG,
@@ -214,3 +222,4 @@ export type {
     NEWS_OPTIONS,
     NEWS_JSON
 }
+export { fridgeItems }
