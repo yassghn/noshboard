@@ -140,8 +140,8 @@ function _appendBulletinHtml(bulletinPosts: BULLETIN_POST_HTML[]) {
     const parent = document.getElementById(parentId)
     if (parent) {
         bulletinPosts.forEach((post: BULLETIN_POST_HTML) => {
-            parent.insertBefore(post.heading, parent.firstChild)
             parent.insertBefore(post.paragraph, parent.firstChild)
+            parent.insertBefore(post.heading, parent.firstChild)
         })
     }
 }
