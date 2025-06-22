@@ -9,7 +9,8 @@
 import bulletin from '@noshboard/bulletin'
 import template from '@noshboard/template'
 import storage from '@noshboard/storage'
-import type { BULLETIN_POST, NEWS_GIST } from './types'
+import state from '@noshboard/state'
+import type { BULLETIN_POST, CVS, NEWS_GIST } from './types'
 
 /**
  * @memberof noshboard.module:noshboard/html
@@ -167,9 +168,46 @@ function _appendBulletin() {
     }
 }
 
+/**
+ * fit canvas to view
+ *
+ * @param {CVS} cvs canvas object
+ */
+function fitCanvas(cvs: CVS) {
+	// set base width/height using window inner vals
+	cvs.width = cvs.ctx.canvas.width = window.innerWidth
+	cvs.height = cvs.ctx.canvas.height = window.innerHeight
+
+	cvs.ctx.canvas.style.width = `${cvs.width}px`
+	cvs.ctx.canvas.style.height = `${cvs.height}px`
+
+	// scale to device pixel ratio
+	const dpr = window.devicePixelRatio
+	const rect = cvs.ctx.canvas.getBoundingClientRect()
+
+	cvs.ctx.scale(dpr, dpr)
+
+	cvs.ctx.canvas.style.width = `${rect.width}px`
+	cvs.ctx.canvas.style.height = `${rect.height}px`
+}
+
+/**
+ * fit cvs stack to view
+ */
+function _fitCvsStack() {
+    const cvsStack = state.cvsStack
+    fitCanvas(cvsStack.background)
+    fitCanvas(cvsStack.message)
+    fitCanvas(cvsStack.foreground)
+}
+
 const html = {
     appendBulletin: () => {
         _appendBulletin()
+    },
+
+    fitCvsStack: () => {
+        _fitCvsStack()
     }
 }
 
