@@ -53,7 +53,8 @@
             "@noshboard/bulletin": ["noshboard/bulletin"],
             "@noshboard/html": ["noshboard/html"],
             "@noshboard/template": ["noshboard/template"],
-            "@noshboard/circulate": ["noshboard/circulate"]
+            "@noshboard/circulate": ["noshboard/circulate"],
+            "@noshboard/localFridge": ["noshboard/localFridge"]
         }
     }
 }
