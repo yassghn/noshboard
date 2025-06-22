@@ -136,14 +136,18 @@ function _hewBulletinPosts(
  * @param {BULLETIN_POST_HTML[]} bulletinPostsarray of bulletin post html elements
  */
 function _appendBulletinHtml(bulletinPosts: BULLETIN_POST_HTML[]) {
+    const posts = [...bulletinPosts]
     const config = storage.config
     const parentId = config.html.elems.section.id
     const parent = document.getElementById(parentId)
     if (parent) {
-        bulletinPosts.forEach((post: BULLETIN_POST_HTML) => {
-            parent.insertBefore(post.paragraph, parent.firstChild)
-            parent.insertBefore(post.heading, parent.firstChild)
-        })
+        const before = { val: parent.firstChild }
+        while (posts.length > 0) {
+            const post = posts.pop() as BULLETIN_POST_HTML
+            parent.insertBefore(post.paragraph, before.val)
+            parent.insertBefore(post.heading, post.paragraph)
+            before.val = post.heading
+        }
     }
 }
 
