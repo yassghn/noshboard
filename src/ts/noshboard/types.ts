@@ -66,12 +66,12 @@ interface ELEM {
  * @typedef {object} ELEMS_CONFIG
  * @property {ELEM} main html element main
  * @property {ELEM} section html element section
- * @property {ELEM} DIV html element div
+ * @property {ELEM} div html element div
  */
 interface ELEMS_CONFIG {
     main: ELEM
     section: ELEM
-    DIV: ELEM
+    div: ELEM
 }
 
 /**
