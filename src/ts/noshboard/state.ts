@@ -9,6 +9,7 @@
 import storage from '@noshboard/storage'
 import canvas from '@noshboard/canvas'
 import type { CVS, CVS_STACK } from './types'
+import localFridge from './localFridge'
 
 const _state = {
     cvsStack: null as unknown as CVS_STACK
@@ -20,6 +21,8 @@ const _state = {
  * @returns {boolean} debug flag
  */
 function _getDebug(): boolean {
+    const debug = localFridge.debug
+    if (debug !== undefined) return debug
     return storage.config.debug
 }
 
@@ -29,6 +32,8 @@ function _getDebug(): boolean {
  * @returns {boolean} verbose flag
  */
 function _getVerbose(): boolean {
+    const verbose = localFridge.verbose
+    if (verbose !== undefined) return verbose
     return storage.config.verbose
 }
 
