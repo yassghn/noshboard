@@ -59,7 +59,8 @@
             "@noshboard/util": ["noshboard/util"],
             "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],
             "@noshboard/cvs/messageCvs": ["noshboard/cvs/messageCvs"],
-            "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"]
+            "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"],
+            "@noshboard/pallete": ["noshboard/pallete"]
         }
     }
 }
