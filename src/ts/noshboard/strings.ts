@@ -27,12 +27,12 @@ async function _hewStrings(): Promise<object> {
     const strings = { ...stringsJSON }
     return strings
 }
+
 /**
  * get noshboard strings object
  *
  * @returns {Promise<object>} noshboard strings object
  */
-
 async function _getStrings(): Promise<object>  {
     return await _hewStrings()
 }
