@@ -3,7 +3,7 @@
  *
  * @memberof noshboard
  * @module noshboard/strings
- * @property {noshboard.module:noshboard/strings} strings fetch strings from strings.json
+ * @property {noshboard.module:noshboard/strings} strings fetch noshboard strings json
  */
 
 /**

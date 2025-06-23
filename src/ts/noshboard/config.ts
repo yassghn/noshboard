@@ -3,7 +3,7 @@
  *
  * @memberof noshboard
  * @module noshboard/config
- * @property {noshboard.module:noshboard/config} config noshboard configuration
+ * @property {noshboard.module:noshboard/config} config fetch noshboard config json
  */
 
 import type { CONFIG } from './types'
