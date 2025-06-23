@@ -56,7 +56,10 @@
             "@noshboard/circulate": ["noshboard/circulate"],
             "@noshboard/localFridge": ["noshboard/localFridge"],
             "@noshboard/render": ["noshboard/render"],
-            "@noshboard/util": ["noshboard/util"]
+            "@noshboard/util": ["noshboard/util"],
+            "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],
+            "@noshboard/cvs/messageCvs": ["noshboard/cvs/messageCvs"],
+            "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"]
         }
     }
 }
