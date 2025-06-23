@@ -6,12 +6,32 @@
  * @property {noshboard.module:noshboard/render}
  */
 
-function _render() {
-    
+import state from '@noshboard/state'
+import backgroundCvs from '@noshboard/cvs/backgroundCvs'
+import messageCvs from '@noshboard/cvs/messageCvs'
+import foregroundCvs from '@noshboard/cvs/foregroundCvs'
+
+/**
+ * render loop
+ *
+ * @param {number|null} timestamp time in milliseconds
+ */
+function _render(timestamp: number | null) {
+    requestAnimationFrame((t) => _render(t))
+    try {
+        backgroundCvs.render(timestamp)
+        messageCvs.render(timestamp)
+        foregroundCvs.render(timestamp)
+    } catch (e: any) {
+        if (state.debug) {
+            console.error(e)
+            debugger
+        }
+    }
 }
 
 function render() {
-    _render()
+    _render(null)
 }
 
 export default render

@@ -8,6 +8,7 @@
 
 import verbose from '@noshboard/verbose'
 import html from '@noshboard/html'
+import render from '@noshboard/render'
 
 /**
  * verbose greeting
@@ -24,11 +25,19 @@ function _appendBulletin() {
 }
 
 /**
+ * initiate rendering
+ */
+function _render() {
+    render()
+}
+
+/**
  * do noshboard
  */
 function _noshboard() {
     _greet()
     _appendBulletin()
+    _render()
 }
 
 const circulate = {
