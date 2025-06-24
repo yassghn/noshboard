@@ -203,6 +203,15 @@ const fridgeItems = {
     verbose: 'verbose'
 }
 
+/**
+ * @type {PALLETE}
+ * @typedef {object} PALLETE
+ * @property {(...args: any[]) => void} render render function
+ */
+interface PALLETE {
+    render: (...args: any[]) => void
+}
+
 export type {
     CVS_CONFIG,
     CVS_STACK_CONFIG,
@@ -220,6 +229,7 @@ export type {
     NEWS_GIST,
     NEWS,
     NEWS_OPTIONS,
-    NEWS_JSON
+    NEWS_JSON,
+    PALLETE
 }
 export { fridgeItems }
