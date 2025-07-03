@@ -42,7 +42,7 @@ function _apply(props: CTX_PROPS, lambda: (cvs: CVS) => any, cvs: CVS) {
  */
 function _hewCtxState(): CTX_STATE {
     const obj: CTX_STATE = {
-        props: { ...ctxProps } as CTX_PROPS,
+        props: { ...ctxProps.fresh },
 
         get apply(): (lambda: (cvs: CVS) => any, cvs: CVS) => any {
             return (lambda: (cvs: CVS) => any, cvs: CVS) => {
