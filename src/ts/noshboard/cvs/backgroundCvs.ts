@@ -25,7 +25,9 @@ function _clear() {
 function _render(timestamp: number | null) {
     const cvs = state.backgroundCvs
     _clear()
-    pallete.grid(cvs)
+    if (state.debug) {
+        pallete.grid(cvs)
+    }
 }
 
 const backgroundCvs = {
