@@ -6,28 +6,10 @@
  * @property {noshboard.module:noshboard/pallete} pallete rendering palletes
  */
 
-import type { PALLETE } from './types'
-
-function _renderPallete() {
-
-}
-
-/**
- * hew a renderable pallete
- * 
- * @returns {PALLETE} ready to render pallete
- */
-function _hewPallete(): PALLETE {
-    const pallete: PALLETE = {
-        render: _renderPallete
-    }
-    return pallete
-}
+import newsPallete from './pallete/news'
 
 const pallete = {
-    hewPallete: (): PALLETE => {
-        return _hewPallete()
-    }
+    news: newsPallete
 }
 
 export default pallete

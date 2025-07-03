@@ -6,7 +6,7 @@
  * @property {noshboard.module:noshboard/cvs/messageCvs}
  */
 
-import newsPallete from '@noshboard/pallete/news'
+import pallete from '@noshboard/pallete'
 import state from '@noshboard/state'
 import type { CVS } from '@noshboard/types'
 
@@ -25,7 +25,7 @@ function _clear() {
  */
 function _render(timestamp: number | null, cvs: CVS) {
     _clear()
-    newsPallete(cvs)
+    pallete.news(cvs)
 }
 
 const messageCvs = {
