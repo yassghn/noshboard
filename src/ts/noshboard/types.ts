@@ -132,7 +132,6 @@ interface CVS_STACK {
  * @property {...} TODO TODO props docstring
  */
 interface CTX_PROPS {
-	canvas: HTMLCanvasElement
 	globalAlpha: number
 	globalCompositeOperation: GlobalCompositeOperation
 	strokeStyle: string | CanvasGradient | CanvasPattern
