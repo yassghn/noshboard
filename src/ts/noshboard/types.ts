@@ -86,6 +86,35 @@ interface HTML_CONFIG {
 }
 
 /**
+ * @type {LINES_CONFIG}
+ * @typedef {object} LINES_CONFIG
+ * @property {string} baseWidth base grid line width
+ * @property {string} baseColor base grid line color
+ */
+interface LINES_CONFIG {
+    baseWidth: string
+    baseColor: string
+}
+
+/**
+ * @type {GRID_CONFIG}
+ * @typedef {object} GRID_CONFIG
+ * @property {LINES_CONFIG} lines grid lines config
+ */
+interface GRID_CONFIG {
+    lines: LINES_CONFIG
+}
+
+/**
+ * @type {NOSHBOARD_CONFIG}
+ * @typedef {object} NOSHBOARD_CONFIG
+ * @property {GRID_CONFIG} grid grid config
+ */
+interface NOSHBOARD_CONFIG {
+    grid: GRID_CONFIG
+}
+
+/**
  * @type {CONFIG}
  * @typedef {object} CONFIG noshboard configuration interface
  * @property {boolean} debug debug flag
@@ -95,6 +124,7 @@ interface HTML_CONFIG {
 interface CONFIG {
     debug: boolean
     verbose: boolean
+    noshboard: NOSHBOARD_CONFIG
     html: HTML_CONFIG
 }
 
@@ -301,6 +331,9 @@ export type {
     ELEM,
     ELEMS_CONFIG,
     HTML_CONFIG,
+    LINES_CONFIG,
+    GRID_CONFIG,
+    NOSHBOARD_CONFIG,
     CONFIG,
     CVS,
     CVS_STACK,
