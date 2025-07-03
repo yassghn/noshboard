@@ -88,12 +88,37 @@ interface HTML_CONFIG {
 /**
  * @type {LINES_CONFIG}
  * @typedef {object} LINES_CONFIG
+ * @property {string} baseSpacing base grid line spacing
  * @property {string} baseWidth base grid line width
  * @property {string} baseColor base grid line color
+ * @property {string} centerWidth center grid line width
+ * @property {string} centerColor center grid line color
  */
 interface LINES_CONFIG {
+    baseSpacing: string
     baseWidth: string
     baseColor: string
+    centerWidth: string
+    centerColor: string
+}
+
+/**
+ * @type {LABELS_CONFIG}
+ * @typedef {object} LABELS_CONFIG
+ * @property {string} spacing label spacing
+ * @property {string} width label line width
+ * @property {string} color label line color
+ * @property {string} font label font
+ * @property {string} fontSize label font size
+ * @property {string} textColor label text color
+ */
+interface LABELS_CONFIG {
+    spacing: string
+    width: string
+    color: string
+    font: string
+    fontSize: string
+    textColor: string
 }
 
 /**
@@ -103,6 +128,7 @@ interface LINES_CONFIG {
  */
 interface GRID_CONFIG {
     lines: LINES_CONFIG
+    labels: LABELS_CONFIG
 }
 
 /**
@@ -332,6 +358,7 @@ export type {
     ELEMS_CONFIG,
     HTML_CONFIG,
     LINES_CONFIG,
+    LABELS_CONFIG,
     GRID_CONFIG,
     NOSHBOARD_CONFIG,
     CONFIG,
