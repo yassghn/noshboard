@@ -1,6 +1,14 @@
 {
     "debug": true,
     "verbose": true,
+    "noshboard": {
+        "grid": {
+            "lines": {
+                "baseWidth": "1",
+                "baseColor": "rgb(35, 244, 129)"
+            }
+        }
+    },
     "html": {
         "elems": {
             "main": {
