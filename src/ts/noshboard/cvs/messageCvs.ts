@@ -1,12 +1,14 @@
 /**
  * messageCvs.ts
  *
- * @memberof noshboard
- * @module noshboard/message
- * @property {noshboard.module:noshboard/message}
+ * @memberof noshboard/cvs
+ * @module noshboard/cvs/messageCvs
+ * @property {noshboard.module:noshboard/cvs/messageCvs}
  */
 
+import newsPallete from '@noshboard/pallete/news'
 import state from '@noshboard/state'
+import type { CVS } from '@noshboard/types'
 
 /**
  * clear canvas
@@ -21,8 +23,9 @@ function _clear() {
  *
  * @param {number|null} timestamp time in milliseconds
  */
-function _render(timestamp: number | null) {
+function _render(timestamp: number | null, cvs: CVS) {
     _clear()
+    newsPallete(cvs)
 }
 
 const messageCvs = {
@@ -31,7 +34,8 @@ const messageCvs = {
     },
 
     render: (timestamp: number | null) => {
-        _render(timestamp)
+        const cvs = state.messageCvs
+        _render(timestamp, cvs)
     }
 }
 

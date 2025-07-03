@@ -1,9 +1,9 @@
 /**
  * backgroundCvs.ts
  *
- * @memberof noshboard
- * @module noshboard/background
- * @property {noshboard.module:noshboard/background}
+ * @memberof noshboard/cvs
+ * @module noshboard/cvs/backgroundCvs
+ * @property {noshboard.module:noshboard/cvs/backgroundCvs}
  */
 
 import state from '@noshboard/state'

@@ -57,10 +57,15 @@
             "@noshboard/localFridge": ["noshboard/localFridge"],
             "@noshboard/render": ["noshboard/render"],
             "@noshboard/util": ["noshboard/util"],
+            "@noshboard/obj": ["noshboard/obj"],
             "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],
             "@noshboard/cvs/messageCvs": ["noshboard/cvs/messageCvs"],
             "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"],
-            "@noshboard/pallete": ["noshboard/pallete"]
+            "@noshboard/pallete": ["noshboard/pallete"],
+            "@noshboard/pallete/news": ["noshboard/pallete/news"],
+            "@noshboard/api/browserWindow": ["noshboard/api/browserWindow"],
+            "@noshboard/api/ctxProps": ["noshboard/api/ctxProps"],
+            "@noshboard/api/ctxState": ["noshboard/api/ctxState"]
         }
     }
 }

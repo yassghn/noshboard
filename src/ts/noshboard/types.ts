@@ -102,13 +102,13 @@ interface CONFIG {
  * @type {CVS}
  * @typedef {object} CVS 2d canvas rendering object
  * @property {CanvasRenderingContext2D} ctx canvas 2d rendering context
- * @property {object} api rendering api
+ * @property {NOSH_API} api rendering api
  * @property {number} width canvas width in pixels
  * @property {number} height canvas height in pixels
  */
 interface CVS {
     ctx: CanvasRenderingContext2D
-    api: object
+    api: NOSH_API
     width: number
     height: number
 }
@@ -124,6 +124,77 @@ interface CVS_STACK {
     background: CVS
     message: CVS
     foreground: CVS
+}
+
+/**
+ * @type {CTX_PROPS}
+ * @typedef {object} CTX_PROPS
+ * @property {...} TODO TODO props docstring
+ */
+interface CTX_PROPS {
+	canvas: HTMLCanvasElement
+	globalAlpha: number
+	globalCompositeOperation: GlobalCompositeOperation
+	strokeStyle: string | CanvasGradient | CanvasPattern
+	fillStyle: string | CanvasGradient | CanvasPattern
+	filter: string
+	imageSmoothingEnabled: boolean
+	lineWidth: number
+	lineCap: CanvasLineCap
+	lineJoin: CanvasLineJoin
+	miterLimit: number
+	lineDashOffset: number
+	shadowOffsetX: number
+	shadowOffsetY: number
+	shadowBlur: number
+	shadowColor: string
+	font: string
+	textAlign: CanvasTextAlign
+	textBaseline: CanvasTextBaseline
+	direction: CanvasDirection
+	letterSpacing: string
+	fontKerning: CanvasFontKerning
+	fontStretch: CanvasFontStretch
+	fontVariantCaps: CanvasFontVariantCaps
+	textRendering: CanvasTextRendering
+	wordSpacing: string
+}
+
+/**
+ * @type {CTX_STATE}
+ * @typedef {object} CTX_STATE
+ */
+interface CTX_STATE {
+    props: CTX_PROPS
+    apply: (lambda: (cvs: CVS) => any, cvs: CVS) => any
+}
+
+/**
+ * @type {BROWSER_WINDOW_API}
+ * @typedef {object} BROWSER_WINDOW_API
+ * @property {COORD} center browser window center
+ */
+interface BROWSER_WINDOW_API {
+    center: COORD
+}
+
+/**
+ * @type {CTX_STATE_API}
+ * @typedef {object} CTX_STATE
+ * @property {() => CTX_STATE} hew hew fresh ctx state
+ */
+interface CTX_STATE_API {
+    fresh: () => CTX_STATE
+}
+
+/**
+ * @type {NOSH_API}
+ * @typedef {object} NOSH_API
+ * @property {BROWSER_WINDOW_API} browserWindow browser window api
+ */
+interface NOSH_API {
+    browserWindow: BROWSER_WINDOW_API
+    ctxState: CTX_STATE_API
 }
 
 /**
@@ -212,6 +283,17 @@ interface PALLETE {
     render: (...args: any[]) => void
 }
 
+/**
+ * @type {COORD}
+ * @typedef {object} COORD
+ * @property {number} x x cgs coordinate
+ * @property {number} y y cgs coordinate
+ */
+interface COORD {
+    x: number
+    y: number
+}
+
 export type {
     CVS_CONFIG,
     CVS_STACK_CONFIG,
@@ -223,6 +305,11 @@ export type {
     CONFIG,
     CVS,
     CVS_STACK,
+    CTX_PROPS,
+    CTX_STATE,
+    BROWSER_WINDOW_API,
+    CTX_STATE_API,
+    NOSH_API,
     STRINGS,
     STORAGE,
     BULLETIN_POST,
@@ -230,6 +317,7 @@ export type {
     NEWS,
     NEWS_OPTIONS,
     NEWS_JSON,
-    PALLETE
+    PALLETE,
+    COORD
 }
 export { fridgeItems }
