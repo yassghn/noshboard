@@ -6,7 +6,6 @@
  * @property {noshboard.module:noshboard/api/ctxState}
  */
 
-import obj from '@noshboard/obj'
 import ctxProps from '@noshboard/api/ctxProps'
 import type { CTX_PROPS, CTX_STATE, CVS } from '@noshboard/types'
 
