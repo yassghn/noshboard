@@ -6,6 +6,7 @@
  * @property {noshboard.module:noshboard/cvs/backgroundCvs}
  */
 
+import pallete from '@noshboard/pallete'
 import state from '@noshboard/state'
 
 /**
@@ -22,7 +23,9 @@ function _clear() {
  * @param {number|null} timestamp time in milliseconds
  */
 function _render(timestamp: number | null) {
-
+    const cvs = state.backgroundCvs
+    _clear()
+    pallete.grid(cvs)
 }
 
 const backgroundCvs = {
