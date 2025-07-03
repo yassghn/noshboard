@@ -17,8 +17,9 @@ function _newsPallete(cvs: CVS) {
         const ctx = cvs.ctx
         const center = cvs.api.browserWindow.center
         const size = 50
+        const halfSize = 25
         ctx.translate(center.x, center.y)
-        ctx.fillRect(0, 0, size, size)
+        ctx.fillRect(-halfSize, -halfSize, size, size)
     }, cvs)
 }
 
