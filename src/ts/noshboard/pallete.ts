@@ -6,10 +6,12 @@
  * @property {noshboard.module:noshboard/pallete} pallete rendering palletes
  */
 
-import newsPallete from './pallete/news'
+import newsPallete from '@noshboard/pallete/news'
+import gridPallete from '@noshboard/pallete/grid'
 
 const pallete = {
-    news: newsPallete
+    news: newsPallete,
+    grid: gridPallete
 }
 
 export default pallete
