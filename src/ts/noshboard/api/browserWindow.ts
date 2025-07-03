@@ -8,6 +8,11 @@
 
 import type { COORD } from '@noshboard/types'
 
+/**
+ * calculate window inner center
+ *
+ * @returns {COORD} x/y coordinates of window inner center
+ */
 function _calcCenter(): COORD {
     const width = window.innerWidth
     const height = window.innerHeight
@@ -17,6 +22,11 @@ function _calcCenter(): COORD {
     return center
 }
 
+/**
+ * get x/y coordinates of window inner center
+ *
+ * @returns {COORD} x/y coordinates of window inner center
+ */
 function _getCenter(): COORD {
     const center = _calcCenter()
     return center
