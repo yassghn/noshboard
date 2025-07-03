@@ -64,6 +64,7 @@
             "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"],
             "@noshboard/pallete": ["noshboard/pallete"],
             "@noshboard/pallete/news": ["noshboard/pallete/news"],
+            "@noshboard/pallete/grid": ["noshboard/pallete/grid"],
             "@noshboard/api/browserWindow": ["noshboard/api/browserWindow"],
             "@noshboard/api/ctxProps": ["noshboard/api/ctxProps"],
             "@noshboard/api/ctxState": ["noshboard/api/ctxState"]
