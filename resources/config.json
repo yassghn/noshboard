@@ -2,6 +2,11 @@
     "debug": true,
     "verbose": true,
     "noshboard": {
+        "newsTicker": {
+            "font": "courier new",
+            "fontSize": "36px",
+            "scrollSpeed": ".3"
+        },
         "grid": {
             "lines": {
                 "baseSpacing": "5",

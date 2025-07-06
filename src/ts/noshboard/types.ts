@@ -132,11 +132,25 @@ interface GRID_CONFIG {
 }
 
 /**
+ * @type {NEWS_TICKER_CONFIG}
+ * @typedef {object} NEWS_TICKER_CONFIG
+ * @property {string} font news ticker font
+ * @property {string} fontSize news ticker font size
+ * @property {string} scrollSpeed news ticker scroll speed
+ */
+interface NEWS_TICKER_CONFIG {
+    font: string
+    fontSize: string
+    scrollSpeed: string
+}
+
+/**
  * @type {NOSHBOARD_CONFIG}
  * @typedef {object} NOSHBOARD_CONFIG
  * @property {GRID_CONFIG} grid grid config
  */
 interface NOSHBOARD_CONFIG {
+    newsTicker: NEWS_TICKER_CONFIG
     grid: GRID_CONFIG
 }
 
@@ -360,6 +374,7 @@ export type {
     LINES_CONFIG,
     LABELS_CONFIG,
     GRID_CONFIG,
+    NEWS_TICKER_CONFIG,
     NOSHBOARD_CONFIG,
     CONFIG,
     CVS,
