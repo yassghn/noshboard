@@ -59,6 +59,7 @@
             "@noshboard/util": ["noshboard/util"],
             "@noshboard/obj": ["noshboard/obj"],
             "@noshboard/theme": ["noshboard/theme"],
+            "@noshboard/effects": ["noshboard/effects"],
             "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],
             "@noshboard/cvs/messageCvs": ["noshboard/cvs/messageCvs"],
             "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"],
