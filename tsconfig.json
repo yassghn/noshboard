@@ -60,6 +60,7 @@
             "@noshboard/obj": ["noshboard/obj"],
             "@noshboard/theme": ["noshboard/theme"],
             "@noshboard/effects": ["noshboard/effects"],
+            "@noshboard/effects/scrollingText": ["noshboard/effects/scrollingText"],
             "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],
             "@noshboard/cvs/messageCvs": ["noshboard/cvs/messageCvs"],
             "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"],

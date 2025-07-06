@@ -6,8 +6,10 @@
  * @property {noshboard.module:noshboard/effects} effects canvas effects
  */
 
-const effects = {
+import scrollingText from '@noshboard/effects/scrollingText'
 
+const effects = {
+    scrollingText: scrollingText
 }
 
 export default effects
