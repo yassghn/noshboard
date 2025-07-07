@@ -136,7 +136,7 @@ interface GRID_CONFIG {
  * @typedef {object} NEWS_TICKER_CONFIG
  * @property {string} font news ticker font
  * @property {string} fontSize news ticker font size
- * @property {string} scrollSpeed news ticker scroll speed
+ * @property {string} scrollSpeed news ticker scroll speed in seconds
  */
 interface NEWS_TICKER_CONFIG {
     font: string
