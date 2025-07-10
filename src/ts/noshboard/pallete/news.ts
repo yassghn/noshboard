@@ -54,7 +54,7 @@ function _newsBox(cvs: CVS, timestamp: number) {
         ctx.closePath()
         // add edge blurs
         const leftBlur = ctx.createLinearGradient(0, halfHeight, blurEdgeWidth, halfHeight)
-        leftBlur.addColorStop(.7, primaryColor)
+        leftBlur.addColorStop(0.7, primaryColor)
         leftBlur.addColorStop(1, secondaryColor)
         ctx.fillStyle = leftBlur
         ctx.fillRect(0, 0, blurEdgeWidth, height)
@@ -64,7 +64,7 @@ function _newsBox(cvs: CVS, timestamp: number) {
             widthTotal - blurEdgeWidth,
             halfHeight
         )
-        rightBlur.addColorStop(.7, primaryColor)
+        rightBlur.addColorStop(0.7, primaryColor)
         rightBlur.addColorStop(1, secondaryColor)
         ctx.fillStyle = rightBlur
         ctx.fillRect(widthTotal, 0, -blurEdgeWidth, height)
