@@ -6,12 +6,12 @@
  * @property {noshboard.module:noshboard/effects/scrollingText}
  */
 
-function _scrollingText() {
+import type { SCROLLING_TEXT_OPTS } from '@noshboard/types'
 
-}
+function _scrollingText(opts: SCROLLING_TEXT_OPTS) {}
 
-function scrollingText() {
-    _scrollingText()
+function scrollingText(opts: SCROLLING_TEXT_OPTS) {
+    _scrollingText(opts)
 }
 
 export default scrollingText

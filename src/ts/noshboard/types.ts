@@ -363,6 +363,26 @@ interface COORD {
     y: number
 }
 
+/**
+ * @type {SCROLLING_TEXT_OPTS}
+ * @typedef {object} SCROLLING_TEXT_OPTS
+ * @property {CanvasRenderingContext2D} ctx canvas rendering context
+ * @property {number} timestamp render animation frame timestamp
+ * @property {string} text text to scroll
+ * @property {number} fontSize font size
+ * @property {number} maxWidth max width to scroll
+ * @property {number} maxHeight max available height
+ */
+interface SCROLLING_TEXT_OPTS {
+    ctx: CanvasRenderingContext2D
+    timestamp: number
+    text: string
+    scrollSpeed: number
+    fontSize: number
+    maxWidth: number
+    maxHeight: number
+}
+
 export type {
     CVS_CONFIG,
     CVS_STACK_CONFIG,
@@ -392,6 +412,7 @@ export type {
     NEWS_OPTIONS,
     NEWS_JSON,
     PALLETE,
-    COORD
+    COORD,
+    SCROLLING_TEXT_OPTS
 }
 export { fridgeItems }
