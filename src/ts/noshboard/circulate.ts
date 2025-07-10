@@ -28,7 +28,8 @@ function _appendBulletin() {
  * initiate rendering
  */
 function _render() {
-    render()
+    const timestamp = Date.now()
+    render(timestamp)
 }
 
 /**
