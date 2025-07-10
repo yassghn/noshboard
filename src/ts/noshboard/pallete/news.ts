@@ -8,6 +8,7 @@
 
 import theme from '@noshboard/theme'
 import storage from '@noshboard/storage'
+import effects from '@noshboard/effects'
 import type { CVS } from '../types'
 
 function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, height: number) {
@@ -21,7 +22,16 @@ function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, 
     ctx.textAlign = 'left'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = fontColor
-    ctx.fillText('test test test', 0, size)
+    const text = 'test test test test'
+    effects.scrollingText({
+        ctx: ctx,
+        timestamp: timestamp,
+        text: text,
+        scrollSpeed: scrollSpeed,
+        fontSize: size,
+        maxWidth: width,
+        maxHeight: height
+    })
 }
 
 function _newsBox(cvs: CVS, timestamp: number) {
