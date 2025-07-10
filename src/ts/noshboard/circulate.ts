@@ -28,8 +28,14 @@ function _appendBulletin() {
  * initiate rendering
  */
 function _render() {
-    const timestamp = Date.now()
-    render(timestamp)
+    const currentTime = document.timeline.currentTime
+    if (currentTime) {
+        const timeStr = currentTime.toString()
+        const timestamp = parseFloat(timeStr)
+        render(timestamp)
+    } else {
+        throw new Error('cannot get currentTime')
+    }
 }
 
 /**
