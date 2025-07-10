@@ -22,10 +22,10 @@ function _clear() {
  *
  * @param {number|null} timestamp time in milliseconds
  */
-function _render(timestamp: number | null) {
+function _render(timestamp: number) {
     const cvs = state.messageCvs
     _clear()
-    pallete.news(cvs)
+    pallete.news(cvs, timestamp)
 }
 
 const messageCvs = {
@@ -33,7 +33,7 @@ const messageCvs = {
         _clear()
     },
 
-    render: (timestamp: number | null) => {
+    render: (timestamp: number) => {
         _render(timestamp)
     }
 }

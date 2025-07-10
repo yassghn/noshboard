@@ -10,7 +10,7 @@ import theme from '@noshboard/theme'
 import storage from '@noshboard/storage'
 import type { CVS } from '../types'
 
-function _news(ctx: CanvasRenderingContext2D, width: number, height: number) {
+function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, height: number) {
     const font = storage.config.noshboard.newsTicker.font
     const fontSize = storage.config.noshboard.newsTicker.fontSize
     const fs = fontSize.split('px')[0] ?? '0'
@@ -24,7 +24,7 @@ function _news(ctx: CanvasRenderingContext2D, width: number, height: number) {
     ctx.fillText('test test test', 0, size)
 }
 
-function _newsBox(cvs: CVS) {
+function _newsBox(cvs: CVS, timestamp: number) {
     const ctxState = cvs.api.ctxState.fresh()
     ctxState.props.lineWidth = 5
     ctxState.props.fillStyle = theme.obj.secondaryColor
@@ -68,19 +68,17 @@ function _newsBox(cvs: CVS) {
         rightBlur.addColorStop(1, secondaryColor)
         ctx.fillStyle = rightBlur
         ctx.fillRect(widthTotal, 0, -blurEdgeWidth, height)
-        // clip for news
-        ctx.clip()
         // add news
-        _news(ctx, widthTotal, height)
+        _news(ctx, timestamp, widthTotal, height)
     }, cvs)
 }
 
-function _newsPallete(cvs: CVS) {
-    _newsBox(cvs)
+function _newsPallete(cvs: CVS, timestamp: number) {
+    _newsBox(cvs, timestamp)
 }
 
-function newsPallete(cvs: CVS) {
-    _newsPallete(cvs)
+function newsPallete(cvs: CVS, timestamp: number) {
+    _newsPallete(cvs, timestamp)
 }
 
 export default newsPallete
