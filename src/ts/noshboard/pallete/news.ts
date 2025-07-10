@@ -62,6 +62,8 @@ function _newsBox(cvs: CVS, timestamp: number) {
         ctx.lineTo(0, 0)
         ctx.fill()
         ctx.closePath()
+        // clip for news
+        ctx.clip()
         // add edge blurs
         const leftBlur = ctx.createLinearGradient(0, halfHeight, blurEdgeWidth, halfHeight)
         leftBlur.addColorStop(0.7, primaryColor)
