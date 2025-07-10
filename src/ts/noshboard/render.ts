@@ -16,7 +16,7 @@ import foregroundCvs from '@noshboard/cvs/foregroundCvs'
  *
  * @param {number|null} timestamp time in milliseconds
  */
-function _render(timestamp: number | null) {
+function _render(timestamp: number) {
     requestAnimationFrame((t) => _render(t))
     try {
         backgroundCvs.render(timestamp)
@@ -30,8 +30,8 @@ function _render(timestamp: number | null) {
     }
 }
 
-function render() {
-    _render(null)
+function render(timestamp: number) {
+    _render(timestamp)
 }
 
 export default render
