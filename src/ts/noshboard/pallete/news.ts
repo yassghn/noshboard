@@ -12,6 +12,11 @@ import effects from '@noshboard/effects'
 import bulletin from '@noshboard/bulletin'
 import type { CVS } from '../types'
 
+/**
+ * get news text from bulletin
+ *
+ * @returns {string} news text
+ */
 function _hewNewsText(): string {
     const newsGist = bulletin.newsGist
     const text = { str: '' }
@@ -26,6 +31,14 @@ function _hewNewsText(): string {
     return text.str
 }
 
+/**
+ * render scrolling news text
+ *
+ * @param {CanvasRenderingContext2D} ctx rendering context
+ * @param {number} timestamp time
+ * @param {number} width news box total width
+ * @param {number} height news box height
+ */
 function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, height: number) {
     const font = storage.config.noshboard.newsTicker.font
     const fontSize = storage.config.noshboard.newsTicker.fontSize
@@ -49,6 +62,12 @@ function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, 
     })
 }
 
+/**
+ * render news box with news
+ *
+ * @param {CVS} cvs canvas rendering object
+ * @param {number }timestamp time
+ */
 function _newsBox(cvs: CVS, timestamp: number) {
     const ctxState = cvs.api.ctxState.fresh()
     ctxState.props.lineWidth = 5
@@ -100,12 +119,24 @@ function _newsBox(cvs: CVS, timestamp: number) {
     }, cvs)
 }
 
-function _newsPallete(cvs: CVS, timestamp: number) {
+/**
+ * render news pallete
+ *
+ * @param {CVS} cvs canvas rendering object
+ * @param {number }timestamp time
+ */
+function _render(cvs: CVS, timestamp: number) {
     _newsBox(cvs, timestamp)
 }
 
+/**
+ * news pallete
+ *
+ * @param {CVS} cvs canvas rendering object
+ * @param {number }timestamp time
+ */
 function newsPallete(cvs: CVS, timestamp: number) {
-    _newsPallete(cvs, timestamp)
+    _render(cvs, timestamp)
 }
 
 export default newsPallete
