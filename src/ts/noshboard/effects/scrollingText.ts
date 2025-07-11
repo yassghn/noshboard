@@ -32,7 +32,7 @@ function _updateLastUpdate(timestamp: number) {
  */
 function _needsUpdate(opts: SCROLLING_TEXT_OPTS) {
     // get scroll speed in miliseconds
-    const limit = 1000 * opts.scrollSpeed
+    const limit = opts.scrollSpeed
     // timestamps/limit predicate
     const update = opts.timestamp - _state.lastUpdate >= limit
     return update
