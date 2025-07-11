@@ -9,7 +9,22 @@
 import theme from '@noshboard/theme'
 import storage from '@noshboard/storage'
 import effects from '@noshboard/effects'
+import bulletin from '@noshboard/bulletin'
 import type { CVS } from '../types'
+
+function _hewNewsText(): string {
+    const newsGist = bulletin.newsGist
+    const text = { str: '' }
+    text.str += `TODAYS NEWS @7 [${newsGist.date}]: `
+    newsGist.bulletin.forEach((post, index) => {
+        text.str += post.title.toUpperCase() + ' - '
+        text.str += post.message.toLowerCase()
+        if (index != newsGist.bulletin.length - 1) {
+            text.str += ' | '
+        }
+    })
+    return text.str
+}
 
 function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, height: number) {
     const font = storage.config.noshboard.newsTicker.font
@@ -22,7 +37,7 @@ function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, 
     ctx.textAlign = 'left'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = fontColor
-    const text = 'test test test test'
+    const text = _hewNewsText()
     effects.scrollingText({
         ctx: ctx,
         timestamp: timestamp,
