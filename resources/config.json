@@ -5,7 +5,7 @@
         "newsTicker": {
             "font": "courier new",
             "fontSize": "36px",
-            "scrollSpeed": ".3"
+            "scrollSpeed": "1"
         },
         "grid": {
             "lines": {
