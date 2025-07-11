@@ -136,7 +136,7 @@ interface GRID_CONFIG {
  * @typedef {object} NEWS_TICKER_CONFIG
  * @property {string} font news ticker font
  * @property {string} fontSize news ticker font size
- * @property {string} scrollSpeed news ticker scroll speed in seconds
+ * @property {string} scrollSpeed news ticker scroll speed in miliseoncds
  */
 interface NEWS_TICKER_CONFIG {
     font: string
@@ -369,6 +369,7 @@ interface COORD {
  * @property {CanvasRenderingContext2D} ctx canvas rendering context
  * @property {number} timestamp render animation frame timestamp
  * @property {string} text text to scroll
+ * @property {number} scrollSpeed scroll speed in miliseconds
  * @property {number} fontSize font size
  * @property {number} maxWidth max width to scroll
  * @property {number} maxHeight max available height
