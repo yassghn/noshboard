@@ -14,7 +14,7 @@ import foregroundCvs from '@noshboard/cvs/foregroundCvs'
 /**
  * render loop
  *
- * @param {number|null} timestamp time in milliseconds
+ * @param {number} timestamp time in milliseconds
  */
 function _render(timestamp: number) {
     requestAnimationFrame((t) => _render(t))

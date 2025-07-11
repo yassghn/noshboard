@@ -20,9 +20,9 @@ function _clear() {
 /**
  * render canvas
  *
- * @param {number|null} timestamp time in milliseconds
+ * @param {number} timestamp time in milliseconds
  */
-function _render(timestamp: number | null) {
+function _render(timestamp: number) {
     const cvs = state.backgroundCvs
     _clear()
     if (state.debug) {
@@ -35,7 +35,7 @@ const backgroundCvs = {
         _clear()
     },
 
-    render: (timestamp: number | null) => {
+    render: (timestamp: number) => {
         _render(timestamp)
     }
 }
