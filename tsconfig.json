@@ -59,6 +59,7 @@
             "@noshboard/util": ["noshboard/util"],
             "@noshboard/obj": ["noshboard/obj"],
             "@noshboard/theme": ["noshboard/theme"],
+            "@noshboard/audio": ["noshboard/audio"],
             "@noshboard/effects": ["noshboard/effects"],
             "@noshboard/effects/scrollingText": ["noshboard/effects/scrollingText"],
             "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],

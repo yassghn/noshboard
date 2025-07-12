@@ -10,6 +10,7 @@ import state from '@noshboard/state'
 import storage from '@noshboard/storage'
 import localFridge from '@noshboard/localFridge'
 import html from '@noshboard/html'
+import audio from '@noshboard/audio'
 
 /**
  * initialize state
@@ -71,6 +72,7 @@ function _fitCvsStack() {
  */
 async function _initNoshboard() {
     await _initStorage().then(() => {
+        audio.playAudio()
         _initState()
         _updateLocalFridgeOrStorage()
         _fitCvsStack()
