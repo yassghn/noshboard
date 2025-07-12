@@ -14,7 +14,7 @@ import type { NEWS_JSON } from './types'
  * @returns {Promise<object>} news json object
  */
 async function _fetchNewsJson(): Promise<object> {
-    const jsonPath = 'resources/news.json'
+    const jsonPath = '/resources/news.json'
     const jsonObj = (await (await (fetch(jsonPath))).json())
     return jsonObj
 }
