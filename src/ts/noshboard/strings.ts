@@ -12,7 +12,7 @@
  * @returns {Promise<object>} strings json object
  */
 async function _fetchStringsJson(): Promise<object> {
-    const jsonPath = 'resources/strings.json'
+    const jsonPath = '/resources/strings.json'
     const jsobObj = (await (await (fetch(jsonPath))).json())
     return jsobObj
 }

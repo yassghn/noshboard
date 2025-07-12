@@ -14,7 +14,7 @@ import type { CONFIG } from './types'
  * @returns {Promise<object>} configuration json object
  */
 async function _fetchConfigJson(): Promise<object> {
-    const jsonPath = 'resources/config.json'
+    const jsonPath = '/resources/config.json'
     const jsonObj = (await (await (fetch(jsonPath))).json())
     return jsonObj
 }
