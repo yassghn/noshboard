@@ -74,7 +74,8 @@
             // api
             "@noshboard/api/browserWindow": ["noshboard/api/browserWindow"],
             "@noshboard/api/ctxProps": ["noshboard/api/ctxProps"],
-            "@noshboard/api/ctxState": ["noshboard/api/ctxState"]
+            "@noshboard/api/ctxState": ["noshboard/api/ctxState"],
+            "@noshboard/api/wrapper": ["noshboard/api/wrapper"]
         }
     }
 }
