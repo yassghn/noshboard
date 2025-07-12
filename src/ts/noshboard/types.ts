@@ -260,10 +260,12 @@ interface CTX_STATE_API {
  * @type {NOSH_API}
  * @typedef {object} NOSH_API
  * @property {BROWSER_WINDOW_API} browserWindow browser window api
+ * @property {(ctx: CanvasRenderingContext2D) => any} clip ctx.clip wrapper
  */
 interface NOSH_API {
     browserWindow: BROWSER_WINDOW_API
     ctxState: CTX_STATE_API
+    clip: (ctx: CanvasRenderingContext2D) => any
 }
 
 /**
