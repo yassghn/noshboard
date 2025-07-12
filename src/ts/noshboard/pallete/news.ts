@@ -19,13 +19,14 @@ import type { CVS } from '../types'
  */
 function _hewNewsText(): string {
     const newsGist = bulletin.newsGist
+    const separator = storage.bulletin.options.separator
     const text = { str: '' }
     text.str += `TODAYS NEWS @7 [${newsGist.date}]: `
     newsGist.bulletin.forEach((post, index) => {
         text.str += post.title.toUpperCase() + ' - '
         text.str += post.message.toLowerCase()
         if (index != newsGist.bulletin.length - 1) {
-            text.str += ' | '
+            text.str += ` ${separator} `
         }
     })
     return text.str
