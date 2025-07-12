@@ -40,6 +40,7 @@
         "baseUrl": "./src/ts",
         // nice project import syntax
         "paths": {
+            // root
             "@noshboard/config": ["noshboard/config"],
             "@noshboard/types": ["noshboard/types"],
             "@noshboard/api": ["noshboard/api"],
@@ -57,17 +58,20 @@
             "@noshboard/localFridge": ["noshboard/localFridge"],
             "@noshboard/render": ["noshboard/render"],
             "@noshboard/util": ["noshboard/util"],
-            "@noshboard/obj": ["noshboard/obj"],
             "@noshboard/theme": ["noshboard/theme"],
             "@noshboard/audio": ["noshboard/audio"],
+            // effects
             "@noshboard/effects": ["noshboard/effects"],
             "@noshboard/effects/scrollingText": ["noshboard/effects/scrollingText"],
+            // cvs
             "@noshboard/cvs/backgroundCvs": ["noshboard/cvs/backgroundCvs"],
             "@noshboard/cvs/messageCvs": ["noshboard/cvs/messageCvs"],
             "@noshboard/cvs/foregroundCvs": ["noshboard/cvs/foregroundCvs"],
+            // pallete
             "@noshboard/pallete": ["noshboard/pallete"],
             "@noshboard/pallete/news": ["noshboard/pallete/news"],
             "@noshboard/pallete/grid": ["noshboard/pallete/grid"],
+            // api
             "@noshboard/api/browserWindow": ["noshboard/api/browserWindow"],
             "@noshboard/api/ctxProps": ["noshboard/api/ctxProps"],
             "@noshboard/api/ctxState": ["noshboard/api/ctxState"]
