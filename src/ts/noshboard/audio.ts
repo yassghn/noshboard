@@ -1,5 +1,9 @@
 /**
  * audio.ts
+ *
+ * @memberof noshboard
+ * @module noshboard/audio
+ * @property {noshboard.module:noshboard/audio} audio noshboard audio
  */
 
 import state from '@noshboard/state'
@@ -8,17 +12,35 @@ const _audioState = {
     isPlaying: false
 }
 
+/**
+ * get audio context
+ *
+ * @returns {AudioContext} audio context
+ */
 function _hewAudioContext() {
     const ctx = new AudioContext()
     return ctx
 }
 
+/**
+ * get audio source
+ *
+ * @param {AudioContext} audioCtx audio context
+ * @returns {AudioBufferSourceNode} audio source
+ */
 function _hewAudioSource(audioCtx: AudioContext) {
     const audioSrc = audioCtx.createBufferSource()
     audioSrc.connect(audioCtx.destination)
     return audioSrc
 }
 
+/**
+ * get audio volume node
+ *
+ * @param {AudioContext} audioCtx audio context
+ * @param {AudioBufferSourceNode} audioSrc audio source
+ * @returns {GainNode} audio volume
+ */
 function _hewAudioGain(audioCtx: AudioContext, audioSrc: AudioBufferSourceNode) {
     const audioGain = audioCtx.createGain()
     audioGain.connect(audioCtx.destination)
@@ -26,6 +48,11 @@ function _hewAudioGain(audioCtx: AudioContext, audioSrc: AudioBufferSourceNode) 
     return audioGain
 }
 
+/**
+ * start audio
+ *
+ * @param {AudioBuffer} audioData audio data to play
+ */
 function _startAudio(audioData: AudioBuffer) {
     // hew audio context and source
     const audioCtx = _hewAudioContext()
@@ -39,12 +66,22 @@ function _startAudio(audioData: AudioBuffer) {
     audioSrc.loop = true
 }
 
+/**
+ * audio data decode error callback
+ *
+ * @param {any} error audio data decode error
+ */
 function _audioDataDecodeError(error: any) {
     if (state.debug) {
         console.error(error)
     }
 }
 
+/**
+ * decode audio data
+ *
+ * @param {ArrayBuffer} audioData decode audio data
+ */
 async function _decodeAudioData(audioData: ArrayBuffer) {
     // decode audio data
     try {
@@ -106,6 +143,11 @@ function _hackNeocities(audioData: ArrayBuffer) {
     }
 }
 
+/**
+ * check if file is hosted on neocities
+ *
+ * @returns {boolean} flag indicating if file is hosted on neocities
+ */
 function _isNeocitiesDomain() {
     const retVal = { isNeocitiesDomain: false }
     const href = window.location.href
@@ -115,6 +157,9 @@ function _isNeocitiesDomain() {
     return retVal.isNeocitiesDomain
 }
 
+/**
+ * request audio data
+ */
 async function _requestAudioData() {
     const playlistJson = await (await fetch('/resource/data/audio.json')).json()
     const request = new XMLHttpRequest()
@@ -133,6 +178,9 @@ async function _requestAudioData() {
     request.send()
 }
 
+/**
+ * validate and request audio data
+ */
 async function _validateRequestAudio() {
     try {
         // init audio
@@ -142,6 +190,13 @@ async function _validateRequestAudio() {
     }
 }
 
+/**
+ * process mouse click to begin playing audio. also responds to a variety
+ * of other input events, including keyboard key presses, because browsers
+ * are incredibly borken and the ieee standards are absolute garbage.
+ *
+ * @param {MouseEvent} event process mouse click event
+ */
 function _processClick(event: MouseEvent) {
     event.preventDefault()
     // check for mouse click
@@ -155,10 +210,16 @@ function _processClick(event: MouseEvent) {
     }
 }
 
+/**
+ * add event listener for page click
+ */
 function _addDocumentClickListener() {
     document.addEventListener('click', _processClick)
 }
 
+/**
+ * play audio
+ */
 function _playAudio() {
     _addDocumentClickListener()
 }
