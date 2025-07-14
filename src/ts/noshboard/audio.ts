@@ -8,6 +8,16 @@
 
 import state from '@noshboard/state'
 
+/**
+ * @type {PCMPlayer}
+ * @typedef {class} PCMPlayer mock pcm player class
+ */
+declare class PCMPlayer {
+    public constructor({ ...any })
+    public volume(x: any): any
+    public feed(x: any): any
+}
+
 const _audioState = {
     isPlaying: false
 }
