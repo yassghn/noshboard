@@ -55,7 +55,7 @@ function _render(opts: SCROLLING_TEXT_OPTS) {
  */
 function _update(opts: SCROLLING_TEXT_OPTS) {
     if (_needsUpdate(opts)) {
-        _state.x -= 1
+        _state.x -= 2
         const reset = _state.x < -_state.textWidth
         if (reset) {
             _state.x = opts.maxWidth
