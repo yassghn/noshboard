@@ -13,7 +13,7 @@
  */
 async function _fetchStringsJson(): Promise<object> {
     const jsonPath = '/resources/strings.json'
-    const jsobObj = (await (await (fetch(jsonPath))).json())
+    const jsobObj = await (await fetch(jsonPath, { cache: 'reload' })).json()
     return jsobObj
 }
 
@@ -33,7 +33,7 @@ async function _hewStrings(): Promise<object> {
  *
  * @returns {Promise<object>} noshboard strings object
  */
-async function _getStrings(): Promise<object>  {
+async function _getStrings(): Promise<object> {
     return await _hewStrings()
 }
 

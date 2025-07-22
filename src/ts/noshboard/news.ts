@@ -15,7 +15,7 @@ import type { NEWS_JSON } from './types'
  */
 async function _fetchNewsJson(): Promise<object> {
     const jsonPath = '/resources/news.json'
-    const jsonObj = (await (await (fetch(jsonPath))).json())
+    const jsonObj = await (await fetch(jsonPath, { cache: 'reload' })).json()
     return jsonObj
 }
 
