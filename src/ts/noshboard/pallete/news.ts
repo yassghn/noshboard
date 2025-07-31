@@ -9,28 +9,7 @@
 import theme from '@noshboard/theme'
 import storage from '@noshboard/storage'
 import effects from '@noshboard/effects'
-import bulletin from '@noshboard/bulletin'
-import type { CVS } from '../types'
-
-/**
- * get news text from bulletin
- *
- * @returns {string} news text
- */
-function _hewNewsText(): string {
-    const newsGist = bulletin.newsGist
-    const separator = storage.bulletin.options.separator
-    const text = { str: '' }
-    text.str += `TODAYS NEWS @7 [${newsGist.date}]: `
-    newsGist.bulletin.forEach((post, index) => {
-        text.str += post.title.toUpperCase() + ' - '
-        text.str += post.message.toLowerCase()
-        if (index != newsGist.bulletin.length - 1) {
-            text.str += ` ${separator} `
-        }
-    })
-    return text.str
-}
+import type { CVS, RENDER_OPTS } from '../types'
 
 /**
  * render scrolling news text
@@ -40,7 +19,13 @@ function _hewNewsText(): string {
  * @param {number} width news box total width
  * @param {number} height news box height
  */
-function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, height: number) {
+function _news(
+    ctx: CanvasRenderingContext2D,
+    timestamp: number,
+    renderOpts: RENDER_OPTS,
+    width: number,
+    height: number
+) {
     const font = storage.config.noshboard.newsTicker.font
     const fontSize = storage.config.noshboard.newsTicker.fontSize
     const fs = fontSize.split('px')[0] ?? '0'
@@ -51,11 +36,10 @@ function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, 
     ctx.textAlign = 'left'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = fontColor
-    const text = _hewNewsText()
     effects.scrollingText({
         ctx: ctx,
         timestamp: timestamp,
-        text: text,
+        text: renderOpts.text,
         scrollSpeed: scrollSpeed,
         fontSize: size,
         maxWidth: width,
@@ -69,7 +53,7 @@ function _news(ctx: CanvasRenderingContext2D, timestamp: number, width: number, 
  * @param {CVS} cvs canvas rendering object
  * @param {number }timestamp time
  */
-function _newsBox(cvs: CVS, timestamp: number) {
+function _newsBox(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
     const ctxState = cvs.api.ctxState.fresh()
     ctxState.props.lineWidth = 5
     ctxState.props.fillStyle = theme.obj.secondaryColor
@@ -116,7 +100,7 @@ function _newsBox(cvs: CVS, timestamp: number) {
         ctx.fillStyle = rightBlur
         ctx.fillRect(widthTotal, 0, -blurEdgeWidth, height)
         // add news
-        _news(ctx, timestamp, widthTotal, height)
+        _news(ctx, timestamp, renderOpts, widthTotal, height)
     }, cvs)
 }
 
@@ -126,8 +110,8 @@ function _newsBox(cvs: CVS, timestamp: number) {
  * @param {CVS} cvs canvas rendering object
  * @param {number }timestamp time
  */
-function _render(cvs: CVS, timestamp: number) {
-    _newsBox(cvs, timestamp)
+function _render(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
+    _newsBox(cvs, timestamp, renderOpts)
 }
 
 /**
@@ -136,8 +120,8 @@ function _render(cvs: CVS, timestamp: number) {
  * @param {CVS} cvs canvas rendering object
  * @param {number }timestamp time
  */
-function newsPallete(cvs: CVS, timestamp: number) {
-    _render(cvs, timestamp)
+function newsPallete(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
+    _render(cvs, timestamp, renderOpts)
 }
 
 export default newsPallete

@@ -9,6 +9,8 @@
 import verbose from '@noshboard/verbose'
 import html from '@noshboard/html'
 import render from '@noshboard/render'
+import bulletin from '@noshboard/bulletin'
+import storage from '@noshboard/storage'
 
 /**
  * verbose greeting
@@ -25,6 +27,26 @@ function _appendBulletin() {
 }
 
 /**
+ * get news text from bulletin
+ *
+ * @returns {string} news text
+ */
+function _hewNewsText(): string {
+    const newsGist = bulletin.newsGist
+    const separator = storage.bulletin.options.separator
+    const text = { str: '' }
+    text.str += `TODAYS NEWS @7 [${newsGist.date}]: `
+    newsGist.bulletin.forEach((post, index) => {
+        text.str += post.title.toUpperCase() + ' - '
+        text.str += post.message.toLowerCase()
+        if (index != newsGist.bulletin.length - 1) {
+            text.str += ` ${separator} `
+        }
+    })
+    return text.str
+}
+
+/**
  * initiate rendering
  */
 function _render() {
@@ -32,7 +54,9 @@ function _render() {
     if (currentTime) {
         const timeStr = currentTime.toString()
         const timestamp = parseFloat(timeStr)
-        render(timestamp)
+        const text = _hewNewsText()
+        const renderOpts = { text: text.valueOf() }
+        render(timestamp, renderOpts)
     } else {
         throw new Error('cannot get currentTime')
     }

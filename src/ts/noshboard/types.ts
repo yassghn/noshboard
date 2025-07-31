@@ -386,6 +386,15 @@ interface SCROLLING_TEXT_OPTS {
     maxHeight: number
 }
 
+/**
+ * @type {RENDER_OPTS}
+ * @typedef {object} RENDER_OPTS
+ * @property {string} text text to scroll
+ */
+interface RENDER_OPTS {
+    text: string
+}
+
 export type {
     CVS_CONFIG,
     CVS_STACK_CONFIG,
@@ -416,6 +425,7 @@ export type {
     NEWS_JSON,
     PALLETE,
     COORD,
-    SCROLLING_TEXT_OPTS
+    SCROLLING_TEXT_OPTS,
+    RENDER_OPTS
 }
 export { fridgeItems }

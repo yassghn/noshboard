@@ -8,6 +8,7 @@
 
 import pallete from '@noshboard/pallete'
 import state from '@noshboard/state'
+import type { RENDER_OPTS } from '@noshboard/types'
 
 /**
  * clear canvas
@@ -22,10 +23,10 @@ function _clear() {
  *
  * @param {number} timestamp time in milliseconds
  */
-function _render(timestamp: number) {
+function _render(timestamp: number, renderOpts: RENDER_OPTS) {
     const cvs = state.messageCvs
     _clear()
-    pallete.news(cvs, timestamp)
+    pallete.news(cvs, timestamp, renderOpts)
 }
 
 const messageCvs = {
@@ -33,8 +34,8 @@ const messageCvs = {
         _clear()
     },
 
-    render: (timestamp: number) => {
-        _render(timestamp)
+    render: (timestamp: number, renderOpts: RENDER_OPTS) => {
+        _render(timestamp, renderOpts)
     }
 }
 
