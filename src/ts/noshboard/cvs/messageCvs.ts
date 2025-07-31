@@ -22,6 +22,7 @@ function _clear() {
  * render canvas
  *
  * @param {number} timestamp time in milliseconds
+ * @param {RENDER_OPTS} renderOpts render options
  */
 function _render(timestamp: number, renderOpts: RENDER_OPTS) {
     const cvs = state.messageCvs

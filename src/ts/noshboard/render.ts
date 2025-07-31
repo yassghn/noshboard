@@ -16,6 +16,7 @@ import type { RENDER_OPTS } from './types'
  * render loop
  *
  * @param {number} timestamp time in milliseconds
+ * @param {RENDER_OPTS} renderOpts render options
  */
 function _render(timestamp: number, renderOpts: RENDER_OPTS) {
     requestAnimationFrame((t) => _render(t, renderOpts))

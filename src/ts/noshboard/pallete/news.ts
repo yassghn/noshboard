@@ -16,6 +16,7 @@ import type { CVS, RENDER_OPTS } from '../types'
  *
  * @param {CanvasRenderingContext2D} ctx rendering context
  * @param {number} timestamp time
+ * @param {RENDER_OPTS} renderOpts render options
  * @param {number} width news box total width
  * @param {number} height news box height
  */
@@ -51,7 +52,8 @@ function _news(
  * render news box with news
  *
  * @param {CVS} cvs canvas rendering object
- * @param {number }timestamp time
+ * @param {number}timestamp time
+ * @param {RENDER_OPTS} renderOpts render options
  */
 function _newsBox(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
     const ctxState = cvs.api.ctxState.fresh()
@@ -109,6 +111,7 @@ function _newsBox(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
  *
  * @param {CVS} cvs canvas rendering object
  * @param {number }timestamp time
+ * @param {RENDER_OPTS} renderOpts render options
  */
 function _render(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
     _newsBox(cvs, timestamp, renderOpts)
@@ -119,6 +122,7 @@ function _render(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
  *
  * @param {CVS} cvs canvas rendering object
  * @param {number }timestamp time
+ * @param {RENDER_OPTS} renderOpts render options
  */
 function newsPallete(cvs: CVS, timestamp: number, renderOpts: RENDER_OPTS) {
     _render(cvs, timestamp, renderOpts)
